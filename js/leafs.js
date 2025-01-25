@@ -1,35 +1,53 @@
+
 const cerezo = document.querySelector("#containerLeafs");
-  const leafImages = [
-    "../img/petalo1.png",
-    "../img/petalo2.png",
-    "../img/petalo3.png"
-  ];
+const leafImages = [
+  "../img/petalo1.png",
+  "../img/petalo2.png",
+  "../img/petalo3.png"
+];
 
-  const dropLeafs = () => {
-    let Leaf = document.createElement("div");
-    Leaf.classList.add("leafs");
+const leafPool = [];
 
+const maxLeaves = 10; // Límite máximo de hojas activas
+
+
+for (let i = 0; i < maxLeaves; i++) {
+  let Leaf = document.createElement("div");
+  Leaf.classList.add("leafs");
+  Leaf.style.display = "none";
+  cerezo.appendChild(Leaf);
+  leafPool.push(Leaf);
+}
+
+const dropLeafs = () => {
+  const availableLeaf = leafPool.find(leaf => leaf.style.display === "none");
+
+  if (availableLeaf) {
     let x = Math.random() * (innerWidth - 40);
-    let size = Math.random() * 30 + 10;
+    let size = randomNumber(2, 4); //vh
     let z = Math.random() * 100;
     let duration = Math.random() * 10 + 5;
 
     let hueRotate = Math.random() * 360;
     let randomImage = leafImages[Math.floor(Math.random() * leafImages.length)];
 
-    Leaf.style.left = `${x}px`;
-    Leaf.style.width = `${size}px`;
-    Leaf.style.height = `${size}px`;
-    Leaf.style.zIndex = z;
-    Leaf.style.animationDuration = `${duration}s`;
-    Leaf.style.backgroundImage = `url(${randomImage})`;
-    Leaf.style.filter = `hue-rotate(${hueRotate}deg)`;
-
-    cerezo.appendChild(Leaf);
+    availableLeaf.style.left = `${x}px`;
+    availableLeaf.style.width = `${size}vh`;
+    availableLeaf.style.height = `${size}vh`;
+    availableLeaf.style.zIndex = z;
+    availableLeaf.style.animationDuration = `${duration}s`;
+    availableLeaf.style.backgroundImage = `url(${randomImage})`;
+    availableLeaf.style.filter = `hue-rotate(${hueRotate}deg)`;
+    availableLeaf.style.display = "block"; // Mostrar la hoja
 
     setTimeout(() => {
-      Leaf.remove();
-    }, 10000);
-  };
+      availableLeaf.style.display = "none"; // Ocultar y liberar la hoja
+    }, duration * 1000);
+  }
+};
 
-  setInterval(dropLeafs, 600);
+setInterval(dropLeafs, 300); // Reducir el intervalo para suavizar la animación
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
