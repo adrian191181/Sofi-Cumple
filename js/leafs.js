@@ -1,44 +1,35 @@
 const cerezo = document.querySelector("#containerLeafs");
+  const leafImages = [
+    "../img/petalo1.png",
+    "../img/petalo2.png",
+    "../img/petalo3.png"
+  ];
 
-const dropLeafs = () => {
+  const dropLeafs = () => {
+    let Leaf = document.createElement("div");
+    Leaf.classList.add("leafs");
 
-    let Leaf = document.createElement('Leafs');
+    let x = Math.random() * (innerWidth - 40);
+    let size = Math.random() * 30 + 10;
+    let z = Math.random() * 100;
+    let duration = Math.random() * 10 + 5;
 
-    let x = innerWidth * Math.random();
-    let size = (Math.random() * 30) + 2;
-    let z = Math.random(Math.random()) * 100;
-    let delay = Math.random() * 5;
-    let duration = (Math.random() * 10) + 5;
+    let hueRotate = Math.random() * 360;
+    let randomImage = leafImages[Math.floor(Math.random() * leafImages.length)];
 
-    Leaf.style.left = x + 'px'
-    Leaf.style.width = size + 'px'
-    Leaf.style.height = size + 'px'
-    Leaf.style.zIndex = z
-    Leaf.style.animationDelay = delay + 's'
-    Leaf.style.animationDuration = duration + 's'
+    Leaf.style.left = `${x}px`;
+    Leaf.style.width = `${size}px`;
+    Leaf.style.height = `${size}px`;
+    Leaf.style.zIndex = z;
+    Leaf.style.animationDuration = `${duration}s`;
+    Leaf.style.backgroundImage = `url(${randomImage})`;
+    Leaf.style.filter = `hue-rotate(${hueRotate}deg)`;
 
     cerezo.appendChild(Leaf);
 
     setTimeout(() => {
-        Leaf.remove();
-    }, duration * 1000);
+      Leaf.remove();
+    }, 10000);
+  };
 
-}
-
-setInterval(dropLeafs, 600);
-
-
-const navbar = document.querySelector('.navbar');
-let lastScrollTop = 0;
-
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-
-  if (scrollTop > lastScrollTop) {
-    navbar.style.top = '-100px'; // Oculta el navbar al desplazarse hacia abajo
-  } else {
-    navbar.style.top = '0'; // Muestra el navbar al desplazarse hacia arriba
-  }
-
-  lastScrollTop = scrollTop;
-});
+  setInterval(dropLeafs, 600);

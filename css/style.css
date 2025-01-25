@@ -1,41 +1,46 @@
 .bg-Header{
   background-image: url("https://cdn.pixabay.com/photo/2023/03/13/23/27/cherry-blossoms-7850989_1280.jpg");
-}  
-leafs {
-  position: absolute;
-  top: -10px;
+}
+.navbar {
+  position: fixed;
+    background-color: white;
+    transition: top 0.3s;
+  }
+
+
+
+
+
+
+
+
+
+.leafs {
+  position: fixed;
   animation: leafs linear infinite;
   z-index: 10;
-  position: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  will-change: transform, top;
 }
 
 @keyframes leafs {
   0% {
-    background-image: url(../img/petalo1.png);
-    background-size: cover;
-    top: -10px;
-    transform: rotate(0deg) translateX(100px);
-
+    background-size: contain;
+    top: 0;
+    transform: rotate(0deg) translateX(0);
     filter: hue-rotate(0deg) contrast(1);
   }
   20% {
     filter: hue-rotate(60deg);
   }
   50% {
-    background-image: url(../img/petalo1.png);
-    background-size: cover;
-    transform: rotate(180deg) translateX(-100px);
+    transform: rotate(180deg) translateX(-50px);
   }
   100% {
-    background-image: url(../img/petalo1.png);
-    background-size: cover;
-    top: calc(100vh + 50px);
-    transform: rotate(360deg) translateX(200px);
+    top: calc(100vh + 50px); /* Termina fuera de la vista */
+    transform: rotate(360deg) translateX(50px);
     filter: hue-rotate(0deg) contrast(1);
   }
-}
-.navbar {
-position: fixed;
-  background-color: white;
-  transition: top 0.3s;
 }
