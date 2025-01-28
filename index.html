@@ -30,28 +30,15 @@
   z-index: 11;
 }
 
-.sobre {
-  background-image: url("img/sobre.jpg");
-  position: absolute;  /* Usamos absolute para posicionar respecto a la carta */
-  background-repeat: no-repeat;
-  background-size: contain; /* Ajusta la imagen de fondo sin distorsionar */
-  background-position: center; /* Centra la imagen en el contenedor */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80vw; /* 80% del ancho de la pantalla */
-  height: 60vh; /* La altura se ajusta automáticamente según la imagen */
-  max-height: 80vh; /* Limita la altura al 80% de la altura de la ventana */
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajuste final para centrar perfectamente */
-}
+
 
   </style>
 </head>
 
 <body>
-  <div class="carta" id="overlay">
+  <div class="carta" id="overlay" style="text-align: center;">
+    <div class="fraseBienvenida font" style="font-size: 3rem; margin-top: -470px;">Sofia te invito a sus <em style="font-size: 4rem;">XV</em> años
+    </div>
     <div class="sobre">
       <button class="boton" onclick="quitarOverlay()"></button>
     </div>
@@ -76,7 +63,6 @@
             role="button"
             ><i class="fa fa-calendar" aria-hidden="true"></i>  Agregar al Calendario</a
           >
-          <script type="text/javascript" src="js/addEvent.js" async defer></script>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -128,7 +114,9 @@
             <h2 class="display-4" style="font-size: 3rem;">Sofia Lizeth</h2>
           </div>
           <!-- Contenedor de la frase -->
-          <div id="frase" class="mt-2"></div>
+          <div class="font" >
+            <p id="frase" style="font-size: 1.6rem;"></p>
+          </div>
         </div>
       </div>
     </div>

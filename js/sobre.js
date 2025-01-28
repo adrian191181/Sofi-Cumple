@@ -5,7 +5,9 @@ function quitarOverlay() {
     setTimeout(() => {
       overlay.style.display = 'none';
       document.body.style.overflow = 'auto'; // Permitir desplazamiento
-      typeText();
-    }, 500);
     music();
+
+    }, 500);
+    typeText();
+
   }

@@ -8,6 +8,6 @@ function typeText() {
   if (index < text.length) {
     typingDiv.textContent += text[index];
     index++;
-    setTimeout(typeText, 70); // Controla la velocidad (100 ms por carácter)
+    setTimeout(typeText, 70); // Controla la velocidad
   }
 }
