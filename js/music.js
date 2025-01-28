@@ -3,7 +3,8 @@ const button = document.getElementById('controlButton');
 const icoButton = document.getElementById('iconButton');
 // Duración total de la animación (en milisegundos)
 const fadeDuration = 1000;
-button.addEventListener('click', () => {
+
+function music() {
   const totalSteps = 50; // Más pasos = animación más suave
   const stepTime = fadeDuration / totalSteps;
   const volumeStep = 1 / totalSteps;
@@ -19,12 +20,12 @@ button.addEventListener('click', () => {
         clearInterval(fadeOut);
       }
     }, stepTime);
-    //Cambiar icono
+    // Cambiar icono
     icoButton.classList.remove('fa-volume-up');
     icoButton.classList.add('fa-volume-off');
   } else {
     // Reproduce y sube el volumen gradualmente
-    //cambiar icono
+    // Cambiar icono
     icoButton.classList.remove('fa-volume-off');
     icoButton.classList.add('fa-volume-up');
     audio.play();
@@ -38,7 +39,6 @@ button.addEventListener('click', () => {
       }
     }, stepTime);
   }
-});
-//Agregar si quieres antes
-//setTimeout(() => {
-// }, fadeDuration);
+}
+
+button.addEventListener('click', music);

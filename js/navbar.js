@@ -1,11 +1,17 @@
-
 const navbar = document.querySelector(".navbar");
 let lastScrollTop = 0;
+
+// Ocultar el navbar al cargar la página si está en la parte superior
+if (window.scrollY === 0) {
+  navbar.style.top = "-100px";
+}
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
 
-  if (scrollTop > lastScrollTop) {
+  if (scrollTop === 0) {
+    navbar.style.top = "-100px"; // Oculta el navbar cuando está en la parte superior
+  } else if (scrollTop > lastScrollTop) {
     navbar.style.top = "-100px"; // Oculta el navbar al desplazarse hacia abajo
   } else {
     navbar.style.top = "0"; // Muestra el navbar al desplazarse hacia arriba
@@ -14,22 +20,10 @@ window.addEventListener("scroll", () => {
   lastScrollTop = scrollTop;
 });
 
-const text = "Hoy quiero compartir esta alegría con todas las personas que hacen parte de mi vida, que me aman, me quieren y respetan. Tú eres una de ellas. Deseo que seas parte de este momento tan especial para mí.";
-const typingDiv = document.getElementById("frase");
-const startButton = document.getElementById("startTyping");
-
-let index = 0;
-
-function typeText() {
-  if (index < text.length) {
-    typingDiv.textContent += text[index];
-    index++;
-    setTimeout(typeText, 70); // Controla la velocidad (100 ms por carácter)
-  }
-}
-startButton.addEventListener("click", () => {
-  // Reiniciar animación si se presiona nuevamente
-  typingDiv.textContent = "";
-  index = 0;
-  typeText();
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse);
+    bootstrapCollapse.hide(); // Contrae el menú
+  });
 });

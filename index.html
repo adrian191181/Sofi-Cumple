@@ -1,171 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>XV Años</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-  </head>
+<head>
+  <title>XV Años</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <body id="containerLeafs">
-    <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">Fecha del evento</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>Fecha del evento: <strong>21 de junio</strong> del 2025</p>
-            <p>Es muy importante para nosotros que asistas.</p>
-            <p>¿Quieres agregar este evento a tu agenda?</p>
-            <a
-              title="Agregar al Calendario"
-              class="addeventatc"
-              data-id="Bk24667492"
-              href="https://www.addevent.com/event/Bk24667492"
-              target="_blank"
-              >Agregar al Calendario</a
-            >
-            <script
-              type="text/javascript"
-              src="js/addEvent.js"
-              async
-              defer
-            ></script>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      /* Evita el desplazamiento */
+    }
+    .carta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("img/bgcarta.jpg");
+  background-position: center;
+  z-index: 11;
+}
+
+.sobre {
+  background-image: url("img/sobre.jpg");
+  position: absolute;  /* Usamos absolute para posicionar respecto a la carta */
+  background-repeat: no-repeat;
+  background-size: contain; /* Ajusta la imagen de fondo sin distorsionar */
+  background-position: center; /* Centra la imagen en el contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw; /* 80% del ancho de la pantalla */
+  height: 60vh; /* La altura se ajusta automáticamente según la imagen */
+  max-height: 80vh; /* Limita la altura al 80% de la altura de la ventana */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final para centrar perfectamente */
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="carta" id="overlay">
+    <div class="sobre">
+      <button class="boton" onclick="quitarOverlay()"></button>
+    </div>
+  </div>
+  <div id="containerLeafs"></div>
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Fecha del evento</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Fecha del evento: <strong>21 de junio</strong> del 2025</p>
+          <p>Es muy importante para nosotros que asistas.</p>
+          <p>¿Quieres agregar este evento a tu agenda?</p>
+          <a
+            name=""
+            id=""
+            class="btn btn-light"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250128%2F20250129&details=Que%20no%20se%20te%20olvide%20asistir%21%0ATe%20esperamos%20con%20ansias.&location=Villa%20Palmiere%2C%20Av%20Zapotecas%2044%2C%20Francisco%20Villa%2C%2091969%20Veracruz%2C%20Ver.&text=XV%20A%C3%B1os%20de%20Sofia"
+            role="button"
+            ><i class="fa fa-calendar" aria-hidden="true"></i>  Agregar al Calendario</a
+          >
+          <script type="text/javascript" src="js/addEvent.js" async defer></script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cerrar
+          </button>
         </div>
       </div>
     </div>
-    <header>
-      <nav class="nav justify-content-center fixed-top navbar">
-        <a class="nav-link text-dark" href="#div1">Presentacion</a>
-        <a class="nav-link text-dark" href="#div2">Ubicacion</a>
-        <a class="nav-link text-dark" href="#div3">Etc..</a>
-      </nav>
-    </header>
-    <main>
-      <div class="leafs"></div>
-      <div
-        data-bs-spy="scroll"
-        data-bs-target="#navigate"
-        data-bs-smooth-scroll="true"
-        tabindex="0"
-      >
-        <!-- Presentacion -->
-        <div id="div1">
-          <div class="d-flex flex-column justify-content-center align-items-center vh-100">
-            <!-- Contenedor principal -->
-            <div class="backdrop text-center font">
-              <h1 class="display-1" style="font-size: 5rem;">XV</h1>
-              <h2 class="display-4" style="font-size: 3rem;">Sofia Lizeth</h2>
-            </div>
-            <!-- Contenedor de la frase -->
-            <div id="frase" class="mt-2"></div>
-          </div>
-            <button id="startTyping" style="position: fixed; top: 300px; border-radius: 14px; border-style: solid; border-color: black; background-color: aquamarine;">
-              Frase
-            </button>
-          </div>
+  </div>
+  <header>
+
+    <nav class="nav navbar navbar-expand-sm navbar-light bg-light justify-content-center fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">XV Años</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#div1" aria-current="page">Presentacion
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#div2" aria-current="page">Div2
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#div3" aria-current="page">Div3
+              </a>
+            </li>
+          </ul>
         </div>
-        <!-- Otras cosas-->
-        <div id="div2" class="bg-success" style="height: 100vh">div2</div>
-        <div id="div3" class="bg-light" style="height: 100vh">div3</div>
       </div>
-    </main>
-    <footer>
-      <!-- place footer here -->
-      <button
-        id="dateButton"
-        style="
+    </nav>
+  </header>
+  <main>
+    <div class="leafs"></div>
+    <div data-bs-spy="scroll" data-bs-target="#navigate" data-bs-smooth-scroll="true" tabindex="0">
+      <!-- Presentacion -->
+      <div id="div1">
+        <div class="d-flex flex-column justify-content-center align-items-center vh-100"
+          style="background-color: pink;">
+          <!-- Contenedor principal -->
+          <div class="backdrop text-center font">
+            <h1 class="display-1" style="font-size: 5rem;">XV</h1>
+            <h2 class="display-4" style="font-size: 3rem;">Sofia Lizeth</h2>
+          </div>
+          <!-- Contenedor de la frase -->
+          <div id="frase" class="mt-2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Otras cosas-->
+    <div id="div2" class="bg-success" style="height: 100vh">div2</div>
+    <div id="div3" class="bg-light" style="height: 100vh">div3</div>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+    <button id="dateButton" style="
           position: fixed;
-          bottom: 120px;
           padding: 10px;
           padding-right: 40px;
-        "
-        data-toggle="modal"
-        data-target="#myModal"
-      >
-        <div style="display: grid; height: 60px; width: 60px">
-          <span
-            style="
+        " data-toggle="modal" data-target="#myModal">
+      <div style="display: grid; height: 60px; width: 60px">
+        <span style="
               background-color: #676573;
               border-radius: 20px 20px 0px 0px;
               padding-bottom: 2px;
-            "
-            >jun</span
-          >
-          <span
-            style="
+            ">jun</span>
+        <span style="
               background-color: black;
               border-radius: 0px 0px 20px 20px;
               font-size: 1.2rem;
               padding-bottom: 2px;
-            "
-            >21</span
-          >
-        </div>
-      </button>
-      <audio id="audio" src="/song/music.mp3" autoplay loop></audio>
-      <button id="controlButton" style="height: 45px; padding-left: 25px">
-        <i id="iconButton" class="fa fa-volume-off" aria-hidden="true"></i>
-      </button>
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+            ">21</span>
+      </div>
+    </button>
+    <audio id="audio" src="/song/music.mp3" loop></audio>
+    <button id="controlButton" style="height: 45px; padding-left: 25px">
+      <i id="iconButton" class="fa fa-volume-off" aria-hidden="true"></i>
+    </button>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="/js/leafs.js"></script>
-    <script src="../js/navbar.js"></script>
-    <script src="js/music.js"></script>
-    <script src="js/date.js"></script>
-  </body>
+  <script src="/js/leafs.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/sobre.js"></script>
+  <script src="js/text.js"></script>
+</body>
+
 </html>
