@@ -12,33 +12,11 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      /* Evita el desplazamiento */
-    }
-    .carta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("img/bgcarta.jpg");
-  background-position: center;
-  z-index: 11;
-}
-
-
-
-  </style>
 </head>
 
 <body>
   <div class="carta" id="overlay" style="text-align: center;">
-    <div class="fraseBienvenida font" style="font-size: 3rem; margin-top: -470px;">Sofia te invito a sus <em style="font-size: 4rem;">XV</em> años
-    </div>
+    <div class="fraseBienvenida font"></div>
     <div class="sobre">
       <button class="boton" onclick="quitarOverlay()"></button>
     </div>
@@ -74,7 +52,7 @@
   </div>
   <header>
 
-    <nav class="nav navbar navbar-expand-sm navbar-light bg-light justify-content-center fixed-top">
+    <nav class="nav navbar navbar-expand-sm navbar-light bg-light justify-content-center fixed-top" hidden>
       <div class="container">
         <a class="navbar-brand" href="#">XV Años</a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
@@ -85,15 +63,19 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#div1" aria-current="page">Presentacion
+              <a class="nav-link active" href="#presentation" aria-current="page">Presentacion
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#div2" aria-current="page">Div2
+              <a class="nav-link active" href="#Ubicacion" aria-current="page">Ubicacion
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#div3" aria-current="page">Div3
+              <a class="nav-link active" href="#CodigoV" aria-current="page">Codigo Vestimenta
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#Regalos" aria-current="page">Mesa de Regalos
               </a>
             </li>
           </ul>
@@ -105,7 +87,7 @@
     <div class="leafs"></div>
     <div data-bs-spy="scroll" data-bs-target="#navigate" data-bs-smooth-scroll="true" tabindex="0">
       <!-- Presentacion -->
-      <div id="div1">
+      <div id="presentation">
         <div class="d-flex flex-column justify-content-center align-items-center vh-100"
           style="background-color: pink;">
           <!-- Contenedor principal -->
@@ -121,8 +103,9 @@
       </div>
     </div>
     <!-- Otras cosas-->
-    <div id="div2" class="bg-success" style="height: 100vh">div2</div>
-    <div id="div3" class="bg-light" style="height: 100vh">div3</div>
+    <div id="Ubicacion" class="bg-success" style="height: 100vh">Ubicacion</div>
+    <div id="CodigoV" class="bg-warning" style="height: 100vh">Codigo Vestimenta</div>
+    <div id="Regalos" class="bg-success" style="height: 100vh">Regalos</div>
     </div>
   </main>
   <footer>

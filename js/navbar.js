@@ -1,29 +1,57 @@
-const navbar = document.querySelector(".navbar");
-let lastScrollTop = 0;
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('nav.navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const collapseElement = document.getElementById('collapsibleNavId');
+  let lastScroll = 0;
+  let isProgrammaticScroll = false;
+  let collapseNav;
 
-// Ocultar el navbar al cargar la página si está en la parte superior
-if (window.scrollY === 0) {
-  navbar.style.top = "-100px";
-}
+  // 1. Mostrar navbar después de 1 segundo con animación
+  setTimeout(() => {
+    nav.hidden = false;
+    nav.style.transform = 'translateY(0)';
+  }, 1000);
 
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
+  // 2. Control de visibilidad con scroll
+  window.addEventListener('scroll', () => {
+    if (isProgrammaticScroll) return;
+    
+    const currentScroll = window.pageYOffset;
+    const scrollDelta = 5; // Margen para detectar scroll mínimo
 
-  if (scrollTop === 0) {
-    navbar.style.top = "-100px"; // Oculta el navbar cuando está en la parte superior
-  } else if (scrollTop > lastScrollTop) {
-    navbar.style.top = "-100px"; // Oculta el navbar al desplazarse hacia abajo
-  } else {
-    navbar.style.top = "0"; // Muestra el navbar al desplazarse hacia arriba
+    if (Math.abs(currentScroll - lastScroll) < scrollDelta) return;
+
+    if (currentScroll > lastScroll && currentScroll > nav.offsetHeight) {
+      // Scroll hacia abajo
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      // Scroll hacia arriba
+      nav.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+  });
+
+  // 3. Control de clic en enlaces
+  if (collapseElement) {
+    collapseNav = new bootstrap.Collapse(collapseElement, { toggle: false });
   }
 
-  lastScrollTop = scrollTop;
-});
-
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse);
-    bootstrapCollapse.hide(); // Contrae el menú
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Colapsar menú en móvil
+      if (window.getComputedStyle(nav.querySelector('.navbar-toggler')).display !== 'none') {
+        collapseNav.hide();
+      }
+      
+      // Ocultar navbar con transición
+      nav.style.transform = 'translateY(-100%)';
+      
+      // 4. Control de scroll automático
+      isProgrammaticScroll = true;
+      setTimeout(() => {
+        isProgrammaticScroll = false;
+        //nav.style.transform = 'translateY(0)';
+      }, 1000);
+    });
   });
 });

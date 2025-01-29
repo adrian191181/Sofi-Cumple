@@ -11,3 +11,40 @@ function typeText() {
     setTimeout(typeText, 70); // Controla la velocidad
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "Sofia te ha invito a sus ";
+  const specialText = "XV"; // Texto dentro del <em>
+  const typingDiv = document.querySelector(".fraseBienvenida");
+
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      typingDiv.innerHTML += text[index];
+      index++;
+      setTimeout(typeText, 70);
+    } else {
+      typeSpecialText();
+    }
+  }
+
+  function typeSpecialText() {
+    let specialIndex = 0;
+    const emElement = document.createElement("em");
+    emElement.classList.add("fraseBienvenida2");
+    typingDiv.appendChild(emElement);
+
+    function typeInsideEm() {
+      if (specialIndex < specialText.length) {
+        emElement.textContent += specialText[specialIndex];
+        specialIndex++;
+        setTimeout(typeInsideEm, 70);
+      }
+    }
+    typeInsideEm();
+  }
+
+  // Iniciar la animación de escritura cuando cargue la página
+  typingDiv.innerHTML = ""; // Limpiar el contenido antes de iniciar
+  typeText();
+});
