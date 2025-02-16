@@ -1,11 +1,23 @@
 function actualizarContador() {
-    var fechaObjetivo = new Date(new Date().getFullYear(), 6, 21);
-    if (new Date() > fechaObjetivo) {
-        fechaObjetivo.setFullYear(fechaObjetivo.getFullYear() + 1);
+    // Definir la fecha y hora objetivo directamente en el código
+    var fecha = "2025-06-21";
+    var hora = "00:00:00";
+    var fechaObjetivo = new Date(`${fecha}T${hora}`);
+    
+    var ahora = new Date();
+    var fechaActual = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+    var fechaEvento = new Date(fechaObjetivo.getFullYear(), fechaObjetivo.getMonth(), fechaObjetivo.getDate());
+    
+    if (ahora > fechaObjetivo) {
+        if (fechaActual > fechaEvento) {
+            document.getElementById("contador").innerHTML = "La fiesta termino 🤷‍♂️, espero que la hayas pasado bien! 🫡";
+        } else {
+            document.getElementById("contador").innerHTML = "Hoy es el dia 🎉. Mandale felicitaciones a sofia! 😍";
+        }
+        return;
     }
 
-    var ahora = new Date();
-    var diferencia = fechaObjetivo - ahora;
+    var diferencia = fechaObjetivo.getTime() - ahora.getTime();
 
     var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

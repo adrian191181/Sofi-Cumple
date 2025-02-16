@@ -21,6 +21,10 @@ html, body {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.fade {
+  backdrop-filter: blur(5px) !important;
+}
+
 
 body {
   margin: 0;/*
@@ -52,7 +56,14 @@ body {
 .font {
   font-family: 'LovelyFont';
 }
+@font-face {
+  font-family: 'fontNumber';
+  src: url('../fonts/fontNumber.ttf') format('truetype');
+}
 
+.font-number {
+  font-family: 'fontNumber';
+}
 .leafs {
   position: fixed;
   animation: leafs linear infinite;
@@ -197,7 +208,19 @@ body {
   border-style: solid; 
   border-color: black;
 }
-
+#contador{
+  white-space: nowrap;
+  font-size: 10vw;
+  width: 100%;
+  max-width: 623px;
+  text-align: center;
+}
+.text-fit{
+  white-space: nowrap;
+  font-size: 10vw;
+  width: 100%;
+  max-width: 90vw;
+}
 @keyframes agrandarReducir {
   0% {
     transform: scale(1);
@@ -215,13 +238,13 @@ body {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   #controlButton {
-    bottom: 20px;
+    bottom: 10px;
   }
 
   #dateButton {
-    bottom: 70px;
+    bottom: 60px;
   }
 }
 
@@ -232,6 +255,11 @@ body {
   }
 }
 
+@media (min-width: 574px) { 
+  #contador{
+    font-size: 50px;
+  }
+}
 @media (min-width: 690px) {
   .boton {
     padding: 0px;
@@ -244,7 +272,7 @@ body {
   .fraseBienvenida {
     font-size: 7vh;
   }
-
+  
   .fraseBienvenida2 {
     font-size: 8vh;
   }
@@ -254,7 +282,7 @@ body {
   .sobre {
     margin-top: 100px;
   }
-
+  
   .boton {
     width: 100px;
     height: 100px;

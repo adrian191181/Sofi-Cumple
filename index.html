@@ -27,6 +27,7 @@
 
   <body>
     <!-- #region Carta-->
+    
     <div class="carta" id="overlay" style="text-align: center">
       <div class="fraseBienvenida font" style="color: #8a113c"></div>
       <div class="sobre">
@@ -47,18 +48,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">Fecha del evento</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h5 class="modal-title" id="myModalLabel">
+              Fecha del evento: <strong>21 de junio</strong> del 2025
+            </h5>
           </div>
           <div class="modal-body">
-            <p>Fecha del evento: <strong>21 de junio</strong> del 2025</p>
-            <p>Es muy importante para nosotros que asistas.</p>
-            <p>¿Quieres agregar este evento a tu agenda?</p>
+            <p class="font-number">
+              Es muy importante para nosotros que asistas.
+            </p>
+            <p class="font-number">¿Quieres agregar este evento a tu agenda?</p>
             <a
               name=""
               id=""
@@ -69,14 +67,8 @@
               Calendario</a
             >
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Cerrar
-            </button>
+          <div class="modal-footer d-flex justify-content-center">
+            <p class="font-number" id="contador"></p>
           </div>
         </div>
       </div>
@@ -114,7 +106,7 @@
         </div>
       </button>
 
-      <audio id="audio" src="/song/music.mp3" loop></audio>
+      <audio id="audio" src="/song/musi9c.mp3" loop></audio>
 
       <button id="controlButton" style="height: 45px; padding-left: 25px">
         <i
@@ -132,7 +124,8 @@
     <header>
       <nav
         class="nav navbar navbar-expand-sm navbar-light justify-content-center fixed-top"
-        style="backdrop-filter: blur(10px); ";
+        style="backdrop-filter: blur(10px)"
+        ;
       >
         <div class="container">
           <a class="navbar-brand font" href="#" style="color: #8a113c"
@@ -180,47 +173,48 @@
       </nav>
     </header>
     <main>
-      <div
-        data-bs-spy="scroll"
-        data-bs-target="#navigate"
-        data-bs-smooth-scroll="true"
-        tabindex="0"
-      >
-        <!--  Presentacion -->
-        <div id="presentation" class="section">
-          
-          <div
-            class="vh-100 d-flex justify-content-center align-items-center text-center"
-            style="
-              background: linear-gradient(220.55deg, #ffeaf6 0%, #ff9de4 100%);
-            "
-          >
-            <!-- Contenedor principal -->
-            <div class="container font ">
-              <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12 col-sm-6 ">
-                  <h1
-                    style="font-size: clamp(90px, 20vw, 230px); color: #4d041c"
-                  >
-                    XV
-                  </h1>
-                  <h2
-                    style="font-size: clamp(45px, 10vw, 115px); color: #4d041c"
-                  >
-                    Sofia Lizeth
-                  </h2>
-                </div>
-                <div class="col-12 col-sm-6  d-flex justify-content-center">
-                  <p id="frase" style="font-size: clamp(30px,6vw,40px); color: #8a113c;line-height:1.1;text-align: justify;"></p>
-                </div>
+      <!-- #region Presentacion-->
+      <div id="presentation" class="section">
+        <div
+          class="vh-100 d-flex justify-content-center align-items-center text-center"
+          style="
+            background: linear-gradient(220.55deg, #ffeaf6 0%, #ff9de4 100%);
+          "
+        >
+          <!-- Contenedor principal -->
+          <div class="container font ">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-12 col-sm-6">
+                <h1 style="font-size: clamp(90px, 20vw, 230px); color: #4d041c">
+                  XV
+                </h1>
+                <h2
+                  style="
+                    font-size: clamp(45px, 10vw, 115px);
+                    color: #4d041c;
+                    white-space: nowrap;
+                  "
+                >
+                  Sofia Lizeth
+                </h2>
+              </div>
+              <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <p
+                  id="frase"
+                  style="
+                    font-size: clamp(30px, 6vw, 40px);
+                    color: #8a113c;
+                    line-height: 1.1;
+                    text-align: justify;
+                  "
+                ></p>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Contenedor de la frase -->
       </div>
-      <!-- Otras div-->
+      <!-- #endregion -->
+      <!-- #region Ubicacion-->
       <div
         id="Ubicacion"
         class="bg-light d-flex justify-content-center align-items-center vh-100 section"
@@ -278,13 +272,34 @@
           </div>
         </div>
       </div>
-
-      <div id="CodigoV" class="bg-warning section" style="height: 100vh">
-        <!--Codigo Vestimenta-->
+      <!-- #endregion -->
+      <!-- #region Vestimenta-->
+      <div
+        id="CodigoV"
+        class="section d-flex justify-content-center align-items-center"
+        style="height: 100vh"
+      >
+        <div class="container">
+          <div class="row">
+            <!-- Titulo  -->
+            <div class="font col-12 text-center">
+              <h1 class="text-fit">Lindos Y Lindas</h1>
+            </div>
+          </div>
+          <p class="">
+            Nos gustaría que te sientas feliz y seguro con tu vestuario. para
+            eso te agradecemos que sigas el código de vestimenta
+          </p>
+        </div>
       </div>
+
+      <!-- #endregion -->
+
+      <!-- #region Regalos-->
       <div id="Regalos" class="bg-success section" style="height: 100vh">
         <!--Regalos-->
       </div>
+      <!-- #endregion -->
     </main>
     <footer>
       <!-- place footer here -->
@@ -305,11 +320,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="/js/leafs.js"></script>
+    <script src="js/leafs.js"></script>
     <script src="js/music.js"></script>
     <script src="js/sobre.js"></script>
     <script src="js/text.js"></script>
     <script src="js/desplazamiento.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/contador.js"></script>
   </body>
 </html>
