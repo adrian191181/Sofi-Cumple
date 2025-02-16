@@ -27,7 +27,7 @@
 
   <body>
     <!-- #region Carta-->
-    
+
     <div class="carta" id="overlay" style="text-align: center">
       <div class="fraseBienvenida font" style="color: #8a113c"></div>
       <div class="sobre">
@@ -174,41 +174,42 @@
     </header>
     <main>
       <!-- #region Presentacion-->
-      <div id="presentation" class="section">
+      <div
+        id="presentation"
+        class="section"
+        style="
+          background: linear-gradient(220.55deg, #ffeaf6 0%, #ff9de4 100%);
+          height: 100vh;
+        "
+      >
+        <!-- Contenedor principal -->
         <div
-          class="vh-100 d-flex justify-content-center align-items-center text-center"
-          style="
-            background: linear-gradient(220.55deg, #ffeaf6 0%, #ff9de4 100%);
-          "
+          class="container-fluid d-flex justify-content-center align-items-center"
+          style="height: 100vh"
         >
-          <!-- Contenedor principal -->
-          <div class="container font ">
-            <div class="row d-flex justify-content-center align-items-center">
-              <div class="col-12 col-sm-6">
-                <h1 style="font-size: clamp(90px, 20vw, 230px); color: #4d041c">
-                  XV
-                </h1>
-                <h2
-                  style="
-                    font-size: clamp(45px, 10vw, 115px);
-                    color: #4d041c;
-                    white-space: nowrap;
-                  "
-                >
-                  Sofia Lizeth
-                </h2>
-              </div>
-              <div class="col-12 col-sm-6 d-flex justify-content-center">
-                <p
-                  id="frase"
-                  style="
-                    font-size: clamp(30px, 6vw, 40px);
-                    color: #8a113c;
-                    line-height: 1.1;
-                    text-align: justify;
-                  "
-                ></p>
-              </div>
+        
+          <!-- Fila de Bootstrap -->
+          <div class="row w-100 font">
+            <!-- Columna para el título -->
+            <div class="col-12 col-sm-6 col-lg-6 text-center">
+              <h1 style="font-size: clamp(90px, 20vw, 230px); color: #4d041c">
+                XV
+              </h1>
+              <h2 style="font-size: clamp(45px, 10vw, 115px); color: #4d041c">
+                Sofia Lizeth
+              </h2>
+            </div>
+            <!-- Columna para el párrafo -->
+            <div class="col-12 col-sm-6 col-lg-6 d-flex align-items-center">
+              <p
+                id="frase"
+                style="
+                  font-size: clamp(30px, 6vw, 40px);
+                  color: #8a113c;
+                  line-height: 1.1;
+                  text-align: justify;
+                "
+              ></p>
             </div>
           </div>
         </div>
