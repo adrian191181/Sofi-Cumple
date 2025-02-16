@@ -1,7 +1,7 @@
-// Obtenemos todas las secciones mediante la clase "section"
 const sections = document.querySelectorAll('.section');
 let currentSection = 0; // Índice de la sección actual
 let isScrolling = false; // Bandera para evitar múltiples transiciones simultáneas
+let startTouchY = 0; // Para detectar la dirección del desplazamiento táctil
 
 /**
  * Desplaza la vista hacia la sección indicada.
@@ -20,7 +20,7 @@ function scrollToSection(index) {
   }, 1000); // Ajusta el tiempo según tu preferencia
 }
 
-// Evento para detectar el desplazamiento con la rueda del mouse
+// Evento para detectar el desplazamiento con la rueda del mouse o touchpad
 window.addEventListener('wheel', (e) => {
   if (isScrolling) return;
   // Si se desplaza hacia abajo
@@ -52,3 +52,28 @@ window.addEventListener('keydown', (e) => {
     }
   }
 });
+
+// Detectar desplazamiento táctil en dispositivos móviles
+window.addEventListener('touchstart', (e) => {
+  if (isScrolling) return;
+  startTouchY = e.touches[0].clientY;
+}, { passive: true });
+
+window.addEventListener('touchend', (e) => {
+  if (isScrolling) return;
+  const endTouchY = e.changedTouches[0].clientY;
+  const diff = startTouchY - endTouchY;
+
+  // Si se desplazó hacia abajo
+  if (diff > 50) {
+    if (currentSection < sections.length - 1) {
+      scrollToSection(currentSection + 1);
+    }
+  }
+  // Si se desplazó hacia arriba
+  else if (diff < -50) {
+    if (currentSection > 0) {
+      scrollToSection(currentSection - 1);
+    }
+  }
+}, { passive: true });
