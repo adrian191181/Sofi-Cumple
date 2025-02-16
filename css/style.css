@@ -35,7 +35,7 @@ html, body {
   min-width: 310px;
   min-height: 648px;
   background-color: white;
-  background-image: url("../img/bgcarta.avif");
+  background-image: url("/img/bgcarta.avif");
   z-index: 11;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -43,7 +43,7 @@ html, body {
 
 @font-face {
   font-family: 'LovelyFont';
-  src: url('../fonts/lovely.ttf') format('truetype');
+  src: url('/fonts/lovely.ttf') format('truetype');
 }
 
 .font {
@@ -51,7 +51,7 @@ html, body {
 }
 @font-face {
   font-family: 'fontNumber';
-  src: url('../fonts/fontNumber.ttf') format('truetype');
+  src: url('/fonts/numbers.ttf') format('truetype');
 }
 
 .font-number {
