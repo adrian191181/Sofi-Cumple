@@ -10,10 +10,9 @@ function typeText() {
     index++;
     setTimeout(typeText, 70); // Controla la velocidad
   }
-}
-document.addEventListener("DOMContentLoaded", function () {
-  const text = "Sofia te ha invito a sus ";
-  const specialText = "XV"; // Texto dentro del <em>
+}window.addEventListener("load", function () {
+  const text = "Tienes una invitación ";
+  const specialText = "especial"; // Texto dentro del <em>
   const typingDiv = document.querySelector(".fraseBienvenida");
 
   let index = 0;
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     typeInsideEm();
   }
 
-  // Iniciar la animación de escritura cuando cargue la página
+  // Iniciar la animación de escritura cuando todo haya cargado completamente
   typingDiv.innerHTML = ""; // Limpiar el contenido antes de iniciar
   typeText();
 });

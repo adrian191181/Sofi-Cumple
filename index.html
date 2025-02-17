@@ -27,13 +27,14 @@
 
   <body>
     <!-- #region Carta-->
-
+    <!--
     <div class="carta" id="overlay" style="text-align: center">
       <div class="fraseBienvenida font" style="color: #8a113c"></div>
       <div class="sobre">
         <button class="boton" onclick="quitarOverlay()"></button>
       </div>
     </div>
+  -->
     <!-- #endregion Carta-->
     <!-- #region Cosas ocultas-->
     <div id="containerLeafs"></div>
@@ -123,7 +124,7 @@
 
     <header>
       <nav
-        class="nav navbar navbar-expand-sm navbar-light justify-content-center fixed-top"
+        class="nav navbar navbar-expand-sm navbar-light justify-content-center fixed-top font-number"
         style="backdrop-filter: blur(10px)"
         ;
       >
@@ -187,7 +188,6 @@
           class="container-fluid d-flex justify-content-center align-items-center"
           style="height: 100vh"
         >
-        
           <!-- Fila de Bootstrap -->
           <div class="row w-100 font">
             <!-- Columna para el título -->
@@ -223,13 +223,13 @@
         <div class="container border rounded p-3">
           <h1
             class="text-center font"
-            style="font-size: clamp(45px, 10vw, 90px)"
+            style="font-size: clamp(45px, 10vw, 60px)"
           >
             Ubicación
           </h1>
           <div class="row d-flex justify-content-center">
             <!-- Tarjeta de información -->
-            <div class="col-11 col-sm-6">
+            <div class="col-11 col-sm-6 col-xxl-5">
               <div class="card">
                 <img
                   src="/img/Villa Palmiere.png"
@@ -256,7 +256,7 @@
               </div>
             </div>
             <!-- Mapa de Google -->
-            <div class="col-6 d-none d-sm-block">
+            <div class="col-6 d-none d-sm-block col-xxl-5">
               <div class="card p-3 h-100 w-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.1639936832958!2d-96.14516178933044!3d19.14429748199965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341e8e827d761%3A0x9ce87a8ea98eb15c!2sVilla%20Palmiere!5e0!3m2!1ses-419!2smx!4v1738975605714!5m2!1ses-419!2smx"
@@ -275,22 +275,30 @@
       </div>
       <!-- #endregion -->
       <!-- #region Vestimenta-->
-      <div
-        id="CodigoV"
-        class="section d-flex justify-content-center align-items-center"
-        style="height: 100vh"
-      >
-        <div class="container">
+      <div id="CodigoV" class="section" style="height: 100vh">
+        <div class="container" style="position: relative; top: 70px">
+          <!-- Titulo  -->
           <div class="row">
-            <!-- Titulo  -->
             <div class="font col-12 text-center">
-              <h1 class="text-fit">Lindos Y Lindas</h1>
+              <h1 style="font-size: clamp(45px, 10vw, 60px)">Lindos Y Lindas</h1>
             </div>
           </div>
-          <p class="font" style="font-size: clamp(16px, 8vw, 60px);">
-            Nos gustaría que te sientas feliz y seguro con tu vestuario. para
-            eso te agradecemos que sigas el código de vestimenta
-          </p>
+          <!-- Contenido -->
+          <div class="row">
+            <div class="col-12 col-sm-4 col-xl-6 d-flex justify-content-center align-items-center">
+              <p class="font-number" style="font-size: clamp(1rem, 2.5vw, 3rem)">
+                Nos gustaría que te sientas feliz y seguro con tu vestuario.
+                Para eso, te agradecemos que sigas el código de vestimenta.
+              </p>
+            </div>
+            <div class="col-6 col-sm-4 col-xl-3">
+              <div class="vestimentaImgMujer clickable" style="height: 400px" onclick="window.open('https://www.pinterest.com/search/pins/?q=semi%20formal%20mujer&rs=typed', '_blank')"></div>
+            </div>
+            <div class="col-6 col-sm-4 col-xl-3">
+              <div class="vestimentaImgHombre clickable" style="height: 400px" onclick="window.open('https://www.pinterest.com/search/pins/?q=semi%20formal%20hombre&rs=typed', '_blank')"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
 

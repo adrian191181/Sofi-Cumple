@@ -199,7 +199,7 @@ html, body {
 }
 .brd{
   border-style: solid; 
-  border-color: black;
+  border-color: rgba(0, 0, 0, 0.242);
 }
 #contador{
   white-space: nowrap;
@@ -208,11 +208,50 @@ html, body {
   max-width: 623px;
   text-align: center;
 }
-.text-fit{
-  white-space: nowrap;
-  font-size: 10vw;
-  width: 100%;
-  max-width: 90vw;
+.vestimentaImgMujer{
+  background-image: url('/img/MujerVestimenta.png'); /* Ruta de la imagen */
+  background-size: contain; /* Ajusta la imagen al tamaño del div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vestimentaImgHombre{
+  background-image: url('/img/HombreVestimenta.png'); /* Ruta de la imagen */
+  background-size: contain; /* Ajusta la imagen al tamaño del div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clickable {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Estilos para PC */
+@media (hover: hover) {
+  .clickable:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* Estilos para móviles */
+@media (hover: none) {
+  .clickable:active {
+    animation: vibrate 0.2s ease;
+  }
+
+  @keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+  }
 }
 @keyframes agrandarReducir {
   0% {
