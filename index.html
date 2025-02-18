@@ -27,10 +27,18 @@
 
   <body>
     <!-- #region Carta-->
-    <div class="carta" id="overlay" style="text-align: center" >
-      <div class="fraseBienvenida font" style="color: #8a113c" data-aos="fade-up" data-aos-duration="2000"></div>
-      <div class="sobre">
-        <button class="boton" onclick="quitarOverlay()"></button>
+    <div class="carta" id="overlay">
+      <div class="container ">
+        <div class="row ">
+          <div class="col-12 d-flex align-items-center justify-content-center" style="height: 10vh">
+            <div class="fraseBienvenida font text-center "></div>
+          </div>
+        </div>
+        <div class="row  d-flex justify-content-center" style="height: 60vh;">
+          <div class="sobre brd d-flex justify-content-center align-items-center" onclick="quitarOverlay()" style="cursor: pointer;">
+            <button class="boton brd"></button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- #endregion Carta-->
@@ -124,7 +132,7 @@
       <!-- #region Navegacion-->
       <nav
         class="nav navbar navbar-expand-sm navbar-light justify-content-center fixed-top font-number"
-        style="background-color: white;"
+        style="background-color: white"
         ;
       >
         <div class="container">
@@ -230,62 +238,70 @@
           data-aos="zoom-out"
           data-aos-duration="1000"
         >
-        <div>
-          <div class="row">
-            <h1
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-              class="text-center font col-12"
-              style="font-size: clamp(45px, 10vw, 60px)"
-            >
-              Ubicación
-            </h1>
-          </div>
-          <div class="row d-flex justify-content-center">
-            <!-- Tarjeta de información -->
-            <div class="col-12 col-sm-6 col-xxl-5">
-              <div class="card" data-aos="fade-up-right" data-aos-duration="1000">
-                <img
-                  src="/img/Villa Palmiere.png"
-                  class="card-img-top"
-                  alt="Imagen de Villa Palmiere"
-                />
+          <div>
+            <div class="row">
+              <h1
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                class="text-center font col-12"
+                style="font-size: clamp(45px, 10vw, 60px)"
+              >
+                Ubicación
+              </h1>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <!-- Tarjeta de información -->
+              <div class="col-12 col-sm-6 col-xxl-5">
                 <div
-                  class="card-body font-number d-flex flex-column justify-content-between"
+                  class="card"
+                  data-aos="fade-up-right"
+                  data-aos-duration="1000"
                 >
-                  <div>
-                    <h5 class="card-title">Villa Palmiere</h5>
-                    <p class="card-text">44 Av Zapotecas</p>
-                  </div>
-                  <br />
-                  <a
-                    class="btn btn-primary mt-auto"
-                    href="https://maps.app.goo.gl/hopyVrz7sP6Hu9ui7"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <img
+                    src="/img/Villa Palmiere.png"
+                    class="card-img-top"
+                    alt="Imagen de Villa Palmiere"
+                  />
+                  <div
+                    class="card-body font-number d-flex flex-column justify-content-between"
                   >
-                    <i class="fa fa-compass" aria-hidden="true"></i> Ir a Maps
-                  </a>
+                    <div>
+                      <h5 class="card-title">Villa Palmiere</h5>
+                      <p class="card-text">44 Av Zapotecas</p>
+                    </div>
+                    <br />
+                    <a
+                      class="btn btn-primary mt-auto"
+                      href="https://maps.app.goo.gl/hopyVrz7sP6Hu9ui7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-compass" aria-hidden="true"></i> Ir a Maps
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Mapa de Google -->
+              <div
+                class="col-6 d-none d-sm-block col-xxl-5"
+                data-aos="fade-up-left"
+                data-aos-duration="1000"
+              >
+                <div class="card p-3 h-100 w-100">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.1639936832958!2d-96.14516178933044!3d19.14429748199965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341e8e827d761%3A0x9ce87a8ea98eb15c!2sVilla%20Palmiere!5e0!3m2!1ses-419!2smx!4v1738975605714!5m2!1ses-419!2smx"
+                    width="100%"
+                    height="100%"
+                    style="border: 0"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  >
+                  </iframe>
                 </div>
               </div>
             </div>
-            <!-- Mapa de Google -->
-            <div class="col-6 d-none d-sm-block col-xxl-5" data-aos="fade-up-left" data-aos-duration="1000">
-              <div class="card p-3 h-100 w-100">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.1639936832958!2d-96.14516178933044!3d19.14429748199965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341e8e827d761%3A0x9ce87a8ea98eb15c!2sVilla%20Palmiere!5e0!3m2!1ses-419!2smx!4v1738975605714!5m2!1ses-419!2smx"
-                  width="100%"
-                  height="100%"
-                  style="border: 0"
-                  allowfullscreen
-                  loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-                >
-                </iframe>
-              </div>
-            </div>
           </div>
-        </div>
         </div>
       </div>
       <!-- #endregion -->
@@ -295,7 +311,11 @@
           <!-- Titulo  -->
           <div class="row">
             <div class="font col-12 text-center">
-              <h1 style="font-size: clamp(45px, 10vw, 60px)" data-aos="zoom-in" data-aos-duration="1000">
+              <h1
+                style="font-size: clamp(45px, 10vw, 60px)"
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+              >
                 Lindos Y Lindas
               </h1>
             </div>

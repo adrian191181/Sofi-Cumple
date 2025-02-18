@@ -1,8 +1,10 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
+
 .navbar.fixed-top {
   z-index: 8;
   transform: translateY(-100%);
@@ -25,22 +27,153 @@ html, body {
   backdrop-filter: blur(5px) !important;
 }
 
+/* #region Carta*/
 .carta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
-  height: 100vh;
-  width: 100vw;
-  min-width: 310px;
-  min-height: 648px;
-  background-color: white;
+  background-color: rgb(232, 168, 225);
   background-image: url("/img/bgcarta.avif");
   z-index: 11;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* Espaciado para evitar bordes pegados */
 }
 
+.fraseBienvenida {
+  font-size: 6vw;
+  /* Ajustado para mejor respuesta en móviles */
+  white-space: nowrap;
+  text-align: center;
+  max-width: 90%;
+  /* Para que no se salga en pantallas pequeñas */
+}
+
+.fraseBienvenida2 {
+  font-size: 7vw;
+}
+
+.boton {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url("../img/sello.png");
+  background-size: contain;
+  padding: 8%;
+  /* Reduce tamaño en pantallas pequeñas */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: agrandarReducir 2s ease-in-out infinite;
+  max-width: 120px;
+  /* Evita que el botón sea gigante en pantallas grandes */
+  max-height: 120px;
+}
+
+.sobre {
+  background-image: url("../img/sobre.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100%;
+  max-width: 580px;
+  width: 90vw;
+  /* Se adapta al ancho de la pantalla */
+  max-height: 70vh;
+  /* Ajustado para pantallas más pequeñas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotarLevemente 1.5s ease-in-out infinite;
+}
+
+/* Media Queries para hacer ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .fraseBienvenida {
+    font-size: 7vw;
+    /* Ajuste para móviles */
+  }
+
+  .fraseBienvenida2 {
+    font-size: 8vw;
+  }
+
+  .boton {
+    padding: 10%;
+  }
+
+  .sobre {
+    max-width: 90%;
+    max-height: 50vh;
+  }
+}
+
+@media (min-width: 770px) {
+  .sobre {
+    margin-top: 60px;
+  }
+}
+
+@media (max-height: 500px) {
+  .boton {
+    padding: 30px;
+    max-width: 0px;
+    max-height: 0px;
+  }
+}
+
+@media (max-height: 480px) and (max-width: 660px) {
+  .fraseBienvenida {
+    font-size: 6vw;
+    /* Ajustado para mejor respuesta en móviles */
+    white-space: nowrap;
+    text-align: center;
+    max-width: 100%;
+    /* Para que no se salga en pantallas pequeñas */
+  }
+}
+
+@media (max-height: 350px) {
+  .boton {
+    padding: 20px;
+    max-width: 0px;
+    max-height: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fraseBienvenida {
+    font-size: 10vw;
+    /* Ajustado para mejor respuesta en móviles */
+    white-space: unset;
+    text-align: center;
+    max-width: 90%;
+    /* Para que no se salga en pantallas pequeñas */
+  }
+
+  .fraseBienvenida2 {
+    font-size: 12vw;
+    max-width: 90%;
+    /* Para que no se salga en pantallas pequeñas */
+  }
+
+  .boton {
+    padding: 10%;
+    max-width: 0px;
+    max-height: 0px;
+  }
+
+  .sobre {
+    max-width: 95%;
+    max-height: 50vh;
+  }
+}
+
+/* #endregion */
 @font-face {
   font-family: 'LovelyFont';
   src: url('/fonts/lovely.ttf') format('truetype');
@@ -49,6 +182,7 @@ html, body {
 .font {
   font-family: 'LovelyFont';
 }
+
 @font-face {
   font-family: 'fontNumber';
   src: url('/fonts/numbers.ttf') format('truetype');
@@ -57,6 +191,7 @@ html, body {
 .font-number {
   font-family: 'fontNumber';
 }
+
 .leafs {
   position: fixed;
   animation: leafs linear infinite;
@@ -93,17 +228,17 @@ html, body {
 
 @keyframes rotarLevemente {
   0% {
-    transform: translate(-50%, -50%) rotate(2deg);
+    transform: rotate(2deg);
     /* Rota desde el inicio */
   }
 
   50% {
-    transform: translate(-50%, -50%) rotate(-2deg);
+    transform: rotate(-2deg);
     /* Rota ligeramente hacia la izquierda */
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(2deg);
+    transform: rotate(2deg);
     /* Rota ligeramente hacia la derecha */
   }
 }
@@ -144,97 +279,57 @@ html, body {
   /* Fondo oscuro */
 }
 
-.fraseBienvenida {
-  position: fixed;
-  top: 10vh;
-  font-size: 7vw;
+
+.brd {
+  border-style: solid;
+  border-color: rgba(255, 0, 0, 0.341);
+  border-width: .1px;
 }
 
-.fraseBienvenida2 {
-  font-size: 9vw;
-}
-
-
-
-.boton {
-  padding: 7vw;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-image: url("../img/sello.png");
-  background-size: contain;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -20px;
-  animation: agrandarReducir 2s ease-in-out infinite;
-  /* Llama a la animación */
-}
-
-.sobre {
-  background-image: url("../img/sobre.jpg");
-  position: absolute;
-  /* Usamos absolute para posicionar respecto a la carta */
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* Ajusta la imagen de fondo sin distorsionar */
-  background-position: center;
-  /* Centra la imagen en el contenedor */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80vw;
-  /* 80% del ancho de la pantalla */
-  height: 60vh;
-  /* La altura se ajusta automáticamente según la imagen */
-  max-height: 80vh;
-  /* Limita la altura al 80% de la altura de la ventana */
-  top: 50%;
-  /* Centra verticalmente */
-  left: 50%;
-  /* Centra horizontalmente */
-  transform: translate(-50%, -50%);
-  /* Ajuste final para centrar perfectamente */
-  transform-origin: center;
-  animation: rotarLevemente 1.5s ease-in-out infinite;
-}
-.brd{
-  border-style: solid; 
-  border-color: rgba(0, 0, 0, 0.242);
-}
-#contador{
+#contador {
   white-space: nowrap;
   font-size: 10vw;
   width: 100%;
   max-width: 623px;
   text-align: center;
 }
-.vestimentaImgMujer{
-  background-image: url('/img/MujerVestimenta.png'); /* Ruta de la imagen */
-  background-size: contain; /* Ajusta la imagen al tamaño del div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+.vestimentaImgMujer {
+  background-image: url('/img/MujerVestimenta.png');
+  /* Ruta de la imagen */
+  background-size: contain;
+  /* Ajusta la imagen al tamaño del div */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.vestimentaImgHombre{
-  background-image: url('/img/HombreVestimenta.png'); /* Ruta de la imagen */
-  background-size: contain; /* Ajusta la imagen al tamaño del div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+.vestimentaImgHombre {
+  background-image: url('/img/HombreVestimenta.png');
+  /* Ruta de la imagen */
+  background-size: contain;
+  /* Ajusta la imagen al tamaño del div */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .clickable {
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Estilos para PC */
-.clickable {
+.click {
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Estilos comunes para PC y móviles */
@@ -243,6 +338,7 @@ html, body {
   transform: scale(1.05);
   filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.3));
 }
+
 @keyframes agrandarReducir {
   0% {
     transform: scale(1);
@@ -270,49 +366,14 @@ html, body {
   }
 }
 
-@media (max-width: 320px) {
-  .boton {
-    padding: 9vw;
-    margin-top: -12px;
-  }
-}
-
-@media (min-width: 574px) { 
-  #contador{
+@media (min-width: 574px) {
+  #contador {
     font-size: 50px;
   }
 }
-@media (max-width: 574px) { 
-  .containerUbi{
+
+@media (max-width: 574px) {
+  .containerUbi {
     height: 100vh;
-  }
-}
-@media (min-width: 690px) {
-  .boton {
-    padding: 0px;
-    padding: 7vh;
-    margin-top: -36px;
-  }
-}
-
-@media (max-width: 500px) {
-  .fraseBienvenida {
-    font-size: 7vh;
-  }
-  
-  .fraseBienvenida2 {
-    font-size: 8vh;
-  }
-}
-
-@media (min-width: 650px) {
-  .sobre {
-    margin-top: 100px;
-  }
-  
-  .boton {
-    width: 100px;
-    height: 100px;
-    margin-top: -12px;
   }
 }
