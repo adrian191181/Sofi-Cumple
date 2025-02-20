@@ -3,7 +3,7 @@ const typingDiv = document.getElementById("frase");
 const startButton = document.getElementById("startTyping");
 
 let index = 0;
-
+typingDiv.textContent = "";
 function typeText() {
   if (index < text.length) {
     typingDiv.textContent += text[index];

@@ -90,7 +90,6 @@ body {
   align-items: center;
   animation: rotarLevemente 1.5s ease-in-out infinite;
 }
-
 /* Media Queries para hacer ajustes en pantallas pequeñas */
 @media (max-width: 768px) {
   .fraseBienvenida {
@@ -111,8 +110,13 @@ body {
     max-height: 50vh;
   }
 }
-
-@media (min-width: 770px) {
+@media (min-width: 574px) {
+  .sobre {
+    margin-top: 60px;
+  }
+  
+}
+@media (min-width: 774px) {
   .sobre {
     margin-top: 60px;
   }
@@ -143,6 +147,7 @@ body {
     max-width: 0px;
     max-height: 0px;
   }
+  
 }
 
 @media (max-width: 480px) {
