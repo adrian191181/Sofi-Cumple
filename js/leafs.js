@@ -1,14 +1,12 @@
 
 const cerezo = document.querySelector("#containerLeafs");
 const leafImages = [
-  "../img/petalo1.png",
-  "../img/petalo2.png",
-  "../img/petalo3.png"
+  "../img/flower.png",  
 ];
 
 const leafPool = [];
 
-const maxLeaves = 10; // Límite máximo de hojas activas
+const maxLeaves = 15; // Límite máximo de hojas activas
 
 
 for (let i = 0; i < maxLeaves; i++) {
