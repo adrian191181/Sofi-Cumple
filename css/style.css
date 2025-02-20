@@ -30,7 +30,7 @@ body {
 /* #region Carta*/
 .carta {
   position: fixed;
-  background-color: rgb(232, 168, 225);
+  background-color: black;
   background-image: url("/img/bgcarta.avif");
   z-index: 11;
   background-repeat: no-repeat;
