@@ -5,7 +5,7 @@ const icoButton = document.getElementById('iconButton');
 const fadeDuration = 1000;
 
 function music() {
-  const totalSteps = 50; // Más pasos = animación más suave
+  const totalSteps = 60; // Más pasos = animación más suave
   const stepTime = fadeDuration / totalSteps;
   const volumeStep = 1 / totalSteps;
 

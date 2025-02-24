@@ -17,7 +17,7 @@ function scrollToSection(index) {
   // Se establece un tiempo prudente para que finalice la transición
   setTimeout(() => {
     isScrolling = false;
-  }, 1000); // Ajusta el tiempo según tu preferencia
+  }, 500); // Ajusta el tiempo según tu preferencia
 }
 
 // Evento para detectar el desplazamiento con la rueda del mouse o touchpad

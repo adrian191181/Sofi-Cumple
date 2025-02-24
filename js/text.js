@@ -21,7 +21,7 @@ function typeText() {
     if (index < text.length) {
       typingDiv.innerHTML += text[index];
       index++;
-      setTimeout(typeText, 70);
+      setTimeout(typeText, 50);
     } else {
       typeSpecialText();
     }
@@ -37,7 +37,7 @@ function typeText() {
       if (specialIndex < specialText.length) {
         emElement.textContent += specialText[specialIndex];
         specialIndex++;
-        setTimeout(typeInsideEm, 70);
+        setTimeout(typeInsideEm, 40);
       }
     }
     typeInsideEm();
