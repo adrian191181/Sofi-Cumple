@@ -38,7 +38,10 @@
             <div class="fraseBienvenida font text-center"></div>
           </div>
         </div>
-        <div class="row d-flex justify-content-center" style="height: 60vh">
+        <div
+          class="row d-flex justify-content-center mt-5"
+          style="height: 60vh"
+        >
           <div
             class="sobre d-flex justify-content-center align-items-center"
             onclick="quitarOverlay()"
@@ -193,9 +196,16 @@
     <main>
       <!-- #region Presentacion-->
       <div
+        class="container-fluid d-flex justify-content-center align-items-center"
         id="presentation"
         class="section"
-        style="background: #ffbbec; height: 100vh"
+        style="
+          background-image: url(img/flowers.png);
+          object-fit: contain;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        "
       >
         <!-- Contenedor principal -->
         <div
@@ -203,10 +213,10 @@
           style="height: 100vh"
         >
           <!-- Fila de Bootstrap -->
-          <div class="row w-100 font" style="margin-top: 80px">
+          <div class="row w-100 font" style="margin-top: 17%">
             <!-- Columna para el título -->
             <div
-              class="col-12 col-sm-6 col-lg-6 text-center d-flex justify-content-center align-items-center"
+              class="col-12 col-sm-4 col-lg-5 text-center d-flex justify-content-center align-items-center"
             >
               <div>
                 <h1 style="font-size: clamp(90px, 20vw, 230px); color: #4d041c">
@@ -218,7 +228,7 @@
               </div>
             </div>
             <!-- Columna para el párrafo -->
-            <div class="col-12 col-sm-6 col-lg-6 d-flex align-items-center">
+            <div class="col-12 col-sm-8 col-lg-7 d-flex align-items-center">
               <p
                 id="frase"
                 style="
@@ -247,15 +257,16 @@
         style="background-image: url(img/UbicacionBG.png)"
       >
         <div
-          class="container containerUbi border rounded p-3 d-flex align-items-center justify-content-center"
+          class="container containerUbi border rounded p-5 d-flex align-items-center justify-content-center mt-5"
           style="
             backdrop-filter: blur(5px);
             background-color: rgba(255, 255, 255, 0.6);
+            height: 89.5vh;
           "
           data-aos="zoom-out"
           data-aos-duration="1000"
         >
-          <div>
+          <div class="container p-5">
             <div class="row">
               <h1
                 data-aos="zoom-in"
@@ -331,7 +342,11 @@
       </div>
       <!-- #endregion -->
       <!-- #region Vestimenta-->
-      <div id="CodigoV" class="section" style="height: 100vh; background-color: #ffbbec">
+      <div
+        id="CodigoV"
+        class="section"
+        style="height: 100vh; background-color: #ffbbec"
+      >
         <div class="container" style="position: relative; top: 70px">
           <!-- Titulo  -->
           <div class="row">
@@ -369,7 +384,7 @@
                 border: #4d041c;
                 border-style: solid;
                 border-radius: 10px;
-                height: 80%;
+                height: 100%;
               "
             >
               <img
@@ -382,14 +397,14 @@
 
               <div
                 class="vestimentaImgMujer clickable"
-                style="height: 50vh"
+                style="height: 40vh"
               ></div>
               <div class="d-none d-sm-block">
                 <hr />
                 <p>Ver Ejemplos</p>
               </div>
             </div>
-            <div class="col-1 "></div>
+            <div class="col-1"></div>
             <div
               data-aos="flip-left"
               data-aos-duration="1000"
@@ -413,7 +428,7 @@
 
               <div
                 class="vestimentaImgHombre clickable"
-                style="height: 50vh"
+                style="height: 40vh"
               ></div>
               <div class="d-none d-sm-block">
                 <hr />
@@ -428,22 +443,36 @@
       <!-- #region Regalos-->
       <div
         id="Regalos"
-        class="section d-flex justify-content-center align-items-center"
+        class="section d-flex justify-content-center align-items-center mt-5 p-5"
         style="height: 100vh; background-color: #ffbbec"
       >
         <!--Regalos-->
         <div class="container">
           <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 text-center">
-              <h1 class="font" style="color: #4d041c" data-aos="zoom-in" data-aos-duration="1000">Mesa de Regalos</h1>
+              <h1
+                class="font"
+                style="color: #4d041c"
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+              >
+                Mesa de Regalos
+              </h1>
             </div>
           </div>
-          <div class="row text-center d-flex justify-content-center">
-            <div class="col-11 col-md-9 d-flex justify-content-center align-items-center">
-              <p class="font-number" style="text-align: justify;" data-aos="fade-right" data-aos-duration="1000">
+          <div class="row text-center d-flex justify-content-center mb-5">
+            <div
+              class="col-11 col-md-9 d-flex justify-content-center align-items-center"
+            >
+              <p
+                class="font-number"
+                style="text-align: justify; font-size: 2vw; margin-bottom: -10%"
+                data-aos="fade-right"
+                data-aos-duration="800"
+              >
                 Su compañía en este día especial es lo más importante para
-                nosotros. Sabemos que algunos de ustedes han expresado interés en
-                contribuir de alguna manera a nuestro día especial. Si desean
+                nosotros. Sabemos que algunos de ustedes han expresado interés
+                en contribuir de alguna manera a nuestro día especial. Si desean
                 hacerlo, hemos decidido que una contribución económica a su
                 consideración sería lo ideal Queremos enfatizar que su presencia
                 es lo más importante para nosotros, y ninguna contribución es
@@ -451,9 +480,19 @@
               </p>
             </div>
           </div>
-          <div class="row d-flex justify-content-center">
-            <div class="col-12 col-sm-10 d-flex justify-content-center">
-              <img src="img/regalo.png" alt="Regalo" style="max-height: 300px; max-width: 99vh;" data-aos="zoom-in-up" data-aos-duration="1000">
+          <div class="row d-flex justify-content-center mt-5">
+            <div class="col-12 col-sm-10 d-flex justify-content-center mt-5">
+              <img
+                src="img/regalo.png"
+                alt="Regalo"
+                style="
+                  max-height: 200px;
+                  max-width: 99vh;
+                  margin-bottom: -100px;
+                "
+                data-aos="zoom-in-up"
+                data-aos-duration="1000"
+              />
             </div>
           </div>
         </div>
