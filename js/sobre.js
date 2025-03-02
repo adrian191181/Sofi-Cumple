@@ -1,11 +1,30 @@
-function quitarOverlay() {
-    const overlay = document.getElementById('overlay');
-    overlay.style.transition = 'opacity 2s';
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-      overlay.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Permitir desplazamiento
-    }, 1200);
+
+  function carta() {
+    var carta = document.getElementById("Carta");
+
+    if (carta.classList.contains("disabled")) {
+      return;
+    }
+
+    carta.classList.add("disabled");
+
+    if (carta.classList.contains("flap")) {
+      carta.classList.remove("flap");
+    } else {
+      carta.classList.add("flap");
+    }
+
+    setTimeout(function () {
+      carta.classList.remove("disabled");
+    }, 1700);
+  }
+  function quitar() {
+    var all = document.getElementById("all");
+    setTimeout(function () {
+      all.remove();
+      document.body.style.overflow = "scroll";
+    }, 1700);
     typeText();
     music();
+    AOS.init();
   }

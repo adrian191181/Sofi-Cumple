@@ -1,7 +1,7 @@
 
 const cerezo = document.querySelector("#containerLeafs");
 const leafImages = [
-  "../img/flower.png",  
+  "../img/Cerezos/flower.png",  
 ];
 
 const leafPool = [];

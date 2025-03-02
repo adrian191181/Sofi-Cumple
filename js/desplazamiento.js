@@ -7,6 +7,7 @@ let startTouchY = 0; // Para detectar la dirección del desplazamiento táctil
  * Desplaza la vista hacia la sección indicada.
  * @param {number} index - Índice de la sección destino.
  */
+/*
 function scrollToSection(index) {
   if (index < 0 || index >= sections.length) return;
   isScrolling = true;
@@ -77,3 +78,4 @@ window.addEventListener('touchend', (e) => {
     }
   }
 }, { passive: true });
+*/

@@ -1,534 +1,323 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>XV Años</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEV Invitacion</title>
 
     <link rel="icon" href="img/flower.png" type="png" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- #region Carta-->
-
-    <div class="carta" id="overlay">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-12 d-flex align-items-center justify-content-center"
-            style="height: 10vh"
-          >
-            <div class="fraseBienvenida font text-center"></div>
-          </div>
-        </div>
-        <div
-          class="row d-flex justify-content-center mt-5"
-          style="height: 60vh"
-        >
-          <div
-            class="sobre d-flex justify-content-center align-items-center"
-            onclick="quitarOverlay()"
-            style="cursor: pointer"
-          >
-            <button class="boton"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- #endregion Carta-->
-    <!-- #region Cosas ocultas-->
+    <!-- #region Void-->
     <div id="containerLeafs"></div>
-    <!-- #region Fecha modal-->
     <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
+      class="modal-co index-full contain enter-done"
+      id="all"
+      style="background-color: #f5edd1; position: fixed; z-index: 99; width: 100vw;"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="myModalLabel">
-              Fecha del evento: <strong>21 de junio</strong> del 2025
-            </h5>
+      <div class="envelope-wrapper" id="Carta" onclick="carta()">
+        <div class="envelope">
+          <div class="letter" style="background-image: url('img/bg.jpg')">
+            <div class="text" onclick="quitar()">
+              <button class="ver-invitacion-btn">Ver Invitación</button>
+            </div>
           </div>
-          <div class="modal-body">
-            <p class="font-number">
-              Es muy importante para nosotros que asistas.
+        </div>
+        <div class="heart"></div>
+        <p class="texto-corazon font-2">Click Para Abrir</p>
+        <p class="font-2 text-center">Sofia Lizeth</p>
+      </div>
+    </div>
+    <!-- #endregion -->
+    <header
+      class="vh-100"
+      style="
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.212) 30%,
+            rgb(255, 255, 255)
+          ),
+          url('img/Cerezos/bgCerezo.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100vw;
+        background-size: cover;
+      "
+    >
+      <div class="center vh-100">
+        <div class="row center col-10">
+          <div class="col-12 text-center c-color-950">
+            <h1 class="font">Mis XV</h1>
+          </div>
+          <div class="col-12 text-center c-color-900">
+            <h2 class="font">Sofia Lizeth</h2>
+          </div>
+          <div class="col-9 center">
+            <div class="d-flex align-items-center gap-2">
+              <button class="play-btn" id="playPause" onclick="music()">
+                <i class="fa fa-play c-color-900" id="playIco"></i>
+              </button>
+              <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+              </div>
+              <audio id="audio" src="song/music.mp3"></audio>
+            </div>
+          </div>
+          <div class="col-11 col-sm-8 mt-3">
+            <p
+              style="font-style: italic; text-align: justify"
+              class="font-2 c-color-800"
+              id="frase"
+            >
+              Hoy quiero compartir esta alegría con todas las personas que hacen
+              parte de mi vida, que me aman, me quieren y respetan. Tú eres una
+              de ellas. Deseo que seas parte de este momento tan especial para
+              mí.
             </p>
-            <p class="font-number">¿Quieres agregar este evento a tu agenda?</p>
-            <a
-              name=""
-              id=""
-              class="btn btn-light"
-              href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250128%2F20250129&details=Que%20no%20se%20te%20olvide%20asistir%21%0ATe%20esperamos%20con%20ansias.&location=Villa%20Palmiere%2C%20Av%20Zapotecas%2044%2C%20Francisco%20Villa%2C%2091969%20Veracruz%2C%20Ver.&text=XV%20A%C3%B1os%20de%20Sofia"
-              role="button"
-              ><i class="fa fa-calendar" aria-hidden="true"></i> Agregar al
-              Calendario</a
-            >
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <p class="font-number" id="contador"></p>
           </div>
         </div>
       </div>
-    </div>
-    <!-- #endregion Fecha modal-->
-    <!-- #region Botones-->
-    <div
-      class="botones"
-      style="position: fixed; bottom: 20px; right: 20px; z-index: 10"
-    >
-      <button
-        id="dateButton"
-        style="padding: 10px; padding-right: 40px"
-        data-toggle="modal"
-        data-target="#myModal"
-      >
-        <div style="display: grid; height: 60px; width: 60px">
-          <span
-            style="
-              background-color: #676573;
-              border-radius: 20px 20px 0px 0px;
-              padding-bottom: 2px;
-            "
-            >jun</span
-          >
-          <span
-            style="
-              background-color: black;
-              border-radius: 0px 0px 20px 20px;
-              font-size: 1.2rem;
-              padding-bottom: 2px;
-            "
-            >21</span
-          >
-        </div>
-      </button>
-
-      <audio id="audio" src="/song/music.mp3" loop></audio>
-
-      <button id="controlButton" style="height: 45px; padding-left: 25px">
-        <i
-          id="iconButton"
-          class="fa fa-volume-off"
-          aria-hidden="true"
-          style="color: #ffa2b3"
-        ></i>
-      </button>
-    </div>
-    <!-- #endregion Botones-->
-
-    <!-- #endregion Cosas Ocultas-->
-
-    <header>
-      <!-- #region Navegacion-->
-      <nav
-        class="nav navbar navbar-expand-sm navbar-light justify-content-center fixed-top font-number"
-        style="background-color: #ffdcf5"
-        ;
-      >
-        <div class="container">
-          <a class="navbar-brand font" href="#" style="color: #8a113c"
-            >XV Años</a
-          >
-          <button
-            class="navbar-toggler d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="#presentation"
-                  aria-current="page"
-                  >Presentacion
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#Ubicacion" aria-current="page"
-                  >Ubicacion
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#CodigoV" aria-current="page"
-                  >Vestimenta
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#Regalos" aria-current="page"
-                  >Regalos
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- #endregion -->
     </header>
-    <main>
-      <!-- #region Presentacion-->
-      <div
-        class="container-fluid d-flex justify-content-center align-items-center"
-        id="presentation"
-        class="section"
-        style="
-          background-image: url(img/flowers.png);
-          object-fit: contain;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center;
-        "
-      >
-        <!-- Contenedor principal -->
-        <div
-          class="container-fluid d-flex justify-content-center align-items-center"
-          style="height: 100vh"
-        >
-          <!-- Fila de Bootstrap -->
-          <div class="row w-100 font" style="margin-top: 17%">
-            <!-- Columna para el título -->
-            <div
-              class="col-12 col-sm-4 col-lg-5 text-center d-flex justify-content-center align-items-center"
-            >
-              <div>
-                <h1 style="font-size: clamp(90px, 20vw, 230px); color: #4d041c">
-                  XV
-                </h1>
-                <h2 style="font-size: clamp(45px, 10vw, 115px); color: #4d041c">
-                  Sofia Lizeth
-                </h2>
-              </div>
-            </div>
-            <!-- Columna para el párrafo -->
-            <div class="col-12 col-sm-8 col-lg-7 d-flex align-items-center">
-              <p
-                id="frase"
-                style="
-                  font-size: clamp(20px, 4vw, 50px);
-                  color: #8a113c;
-                  line-height: 1.1;
-                  text-align: justify;
-                "
-                class="font-number"
-              >
-                Hoy quiero compartir esta alegría con todas las personas que
-                hacen parte de mi vida, que me aman, me quieren y respetan. Tú
-                eres una de ellas. Deseo que seas parte de este momento tan
-                especial para mí.
-              </p>
-            </div>
-            <div class="col-12" style="height: 20vh"></div>
-          </div>
+
+    <main class="container mt-5">
+      <div class="row center">
+        <div class="col-12">
+          <h2 class="font text-center c-color-950" data-aos="zoom-in-up">
+            En agradecimiento a mis padres
+          </h2>
+          <h3 class="font text-center c-color-900" data-aos="zoom-in-up">
+            Daniel Gamboa
+          </h3>
+          <h3 class="font text-center c-color-900" data-aos="zoom-in-up">
+            Carolina Cisneros
+          </h3>
         </div>
-      </div>
-      <!-- #endregion -->
-      <!-- #region Ubicacion-->
-      <div
-        id="Ubicacion"
-        class="d-flex justify-content-center align-items-center vh-100 section"
-        style="background-image: url(img/UbicacionBG.png)"
-      >
         <div
-          class="container containerUbi border rounded p-5 d-flex align-items-center justify-content-center mt-5"
+          class="col-8"
           style="
-            backdrop-filter: blur(5px);
-            background-color: rgba(255, 255, 255, 0.6);
-            height: 89.5vh;
+            height: 15vh;
+            background-image: url(img/Cerezos/cerezo.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
           "
-          data-aos="zoom-out"
-          data-aos-duration="1000"
+          data-aos="zoom-in-up"
+        ></div>
+      </div>
+      <div class="row mt-5 text-center center c-color-950">
+        <h2 class="col-12 text-center font" data-aos="fade-right">
+          Reserva la fecha
+        </h2>
+        <h3 class="col-12 font-2" data-aos="fade-right">Sabado</h3>
+        <h2 class="col-2 font" data-aos="fade-right">Jun</h2>
+        <h1 class="col-2 font-2" data-aos="fade-right">21</h1>
+        <h3 class="col-2 font-2" data-aos="fade-right">2025</h3>
+      </div>
+      <div class="row mt-5 c-color-950">
+        <h2 class="col-12 font text-center" data-aos="zoom-in-up">
+          Cuanto falta?
+        </h2>
+        <div
+          class="col-3 center font-2"
+          style="
+            height: 17vh;
+            background-image: url(img/Cerezos/flower.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          "
+          data-aos="zoom-in-up"
+          id="days"
+        ></div>
+        <div
+          class="col-3 center font-2"
+          style="
+            height: 17vh;
+            background-image: url(img/Cerezos/flower.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          "
+          data-aos="zoom-in-up"
+          id="hours"
+        ></div>
+        <div
+          class="col-3 center font-2"
+          style="
+            height: 17vh;
+            background-image: url(img/Cerezos/flower.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          "
+          data-aos="zoom-in-up"
+          id="minutes"
+        ></div>
+        <div
+          class="col-3 center font-2"
+          style="
+            height: 17vh;
+            background-image: url(img/Cerezos/flower.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          "
+          data-aos="zoom-in-up"
+          id="seconds"
+        ></div>
+        <div
+          class="col-3 text-center font-2"
+          style="height: 5vh"
+          data-aos="zoom-in-up"
         >
-          <div class="container p-5">
-            <div class="row">
-              <h1
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                class="text-center font col-12"
-                style="font-size: clamp(45px, 10vw, 60px); color: #8a113c"
-              >
-                Ubicación
-              </h1>
-            </div>
-            <div class="row d-flex justify-content-center">
-              <!-- Tarjeta de información -->
-              <div class="col-12 col-sm-6 col-xxl-5">
-                <div class="rama">
-                  <div
-                    class="card"
-                    data-aos="fade-up-right"
-                    data-aos-duration="1000"
-                    style="background-color: #ffbbec"
-                  >
-                    <img
-                      src="/img/Villa Palmiere.png"
-                      class="card-img-top"
-                      alt="Imagen de Villa Palmiere"
-                    />
-                    <div
-                      class="card-body font-number d-flex flex-column justify-content-between"
-                    >
-                      <div>
-                        <h5 class="card-title">Villa Palmiere</h5>
-                        <p class="card-text">44 Av Zapotecas</p>
-                      </div>
-                      <br />
-                      <a
-                        class="btn mt-auto"
-                        href="https://maps.app.goo.gl/hopyVrz7sP6Hu9ui7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style="background-color: #8a113c; color: white"
-                      >
-                        <i class="fa fa-compass" aria-hidden="true"></i> Ir a
-                        Maps
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Mapa de Google -->
-              <div
-                class="col-6 d-none d-sm-block col-xxl-5"
-                data-aos="fade-up-left"
-                data-aos-duration="1000"
-              >
-                <div
-                  class="card p-3 h-100 w-100"
-                  style="background-color: #ff9de4"
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.1639936832958!2d-96.14516178933044!3d19.14429748199965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c341e8e827d761%3A0x9ce87a8ea98eb15c!2sVilla%20Palmiere!5e0!3m2!1ses-419!2smx!4v1738975605714!5m2!1ses-419!2smx"
-                    width="100%"
-                    height="100%"
-                    style="border: 0"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  >
-                  </iframe>
-                </div>
-              </div>
-            </div>
-          </div>
+          Dias
+        </div>
+        <div
+          class="col-3 text-center font-2"
+          style="height: 5vh"
+          data-aos="zoom-in-up"
+        >
+          Horas
+        </div>
+        <div
+          class="col-3 text-center font-2"
+          style="height: 5vh"
+          data-aos="zoom-in-up"
+        >
+          Minutos
+        </div>
+        <div
+          class="col-3 text-center font-2"
+          style="height: 5vh"
+          data-aos="zoom-in-up"
+        >
+          Segundos
         </div>
       </div>
-      <!-- #endregion -->
-      <!-- #region Vestimenta-->
-      <div
-        id="CodigoV"
-        class="section"
-        style="height: 100vh; background-color: #ffbbec"
-      >
-        <div class="container" style="position: relative; top: 70px">
-          <!-- Titulo  -->
-          <div class="row">
-            <div class="font col-12 text-center">
-              <h1
-                style="font-size: clamp(45px, 10vw, 60px); color: #8a113c"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                Lindos Y Lindas
-              </h1>
-            </div>
-          </div>
-          <!-- Contenido -->
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-sm-3 col-xl-5">
-              <p
-                class="font-number"
-                style="font-size: clamp(1rem, 2.5vw, 3rem)"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
-                Nos gustaría que te sientas feliz y seguro con tu vestuario.
-                Para eso, te agradecemos que sigas el código de vestimenta.
-              </p>
-            </div>
-            <div
-              data-aos="flip-right"
-              data-aos-duration="1000"
-              class="col-5 col-sm-4 col-xl-3 font-number text-center"
-              onclick="window.open('https://www.pinterest.com/search/pins/?q=vestido%20semi%20formal%20mujer&rs=typed', '_blank')"
-              style="
-                cursor: pointer;
-                background-color: #ff9de3;
-                border: #4d041c;
-                border-style: solid;
-                border-radius: 10px;
-                height: 100%;
-              "
-            >
-              <img
-                src="img/cerezoarbol-lefth.png"
-                alt="Arbol Cereza"
-                class="lefth-hoja"
-                style="width: 100%; margin-top: -30px"
-              />
-              <p class="d-block d-sm-none">Ver Ejemplos</p>
-
-              <div
-                class="vestimentaImgMujer clickable"
-                style="height: 40vh"
-              ></div>
-              <div class="d-none d-sm-block">
-                <hr />
-                <p>Ver Ejemplos</p>
-              </div>
-            </div>
-            <div class="col-1"></div>
-            <div
-              data-aos="flip-left"
-              data-aos-duration="1000"
-              class="col-5 col-sm-4 col-xl-3 font-number text-center"
-              onclick="window.open('https://www.pinterest.com/search/pins/?q=semi%20formal%20hombre&rs=typed', '_blank')"
-              style="
-                cursor: pointer;
-                background-color: #ff9de3;
-                border: #4d041c;
-                border-style: solid;
-                border-radius: 10px;
-              "
-            >
-              <img
-                src="img/cerezoarbol-rigth.png"
-                alt="Arbol Cereza"
-                class="lefth-hoja"
-                style="width: 100%; margin-top: -30px"
-              />
-              <p class="d-block d-sm-none">Ver Ejemplos</p>
-
-              <div
-                class="vestimentaImgHombre clickable"
-                style="height: 40vh"
-              ></div>
-              <div class="d-none d-sm-block">
-                <hr />
-                <p>Ver Ejemplos</p>
-              </div>
-            </div>
-          </div>
+      <div class="row mt-5 center c-color-900">
+        <h2 class="col-12 font text-center" data-aos="fade-right">Recepcion</h2>
+        <div
+          class="col-10"
+          style="
+            height: 20vh;
+            background-image: url(img/Cerezos/cerezoTop.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+          "
+          data-aos="zoom-in-up"
+        ></div>
+        <h4 class="col-12 font-2 text-center" data-aos="fade-left">
+          Villa Palmiere
+        </h4>
+        <h4 class="col-12 font-2 text-center mb-3" data-aos="fade-right">
+          44 Av Zapotecas
+        </h4>
+        <div
+          data-aos="fade-up-right"
+          class="col-4 col-sm-3 center font-2 c-color-800 me-1"
+          style="
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 2px;
+            border-color: #8a1e72;
+            border-style: solid;
+            white-space: nowrap;
+          "
+        >
+          8:00 pm
+        </div>
+        <div
+          data-aos="fade-up-left"
+          class="col-4 col-sm-3 center font-2 c-color-800 ms-1"
+          style="
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 2px;
+            border-color: #8a1e72;
+            border-style: solid;
+          "
+        >
+          <a
+            class="c-color-900"
+            href="https://maps.app.goo.gl/hopyVrz7sP6Hu9ui7"
+            style="text-decoration: none; white-space: nowrap"
+            >Ver mapa</a
+          >
         </div>
       </div>
-
-      <!-- #endregion -->
-      <!-- #region Regalos-->
-      <div
-        id="Regalos"
-        class="section d-flex justify-content-center align-items-center mt-5 p-5"
-        style="height: 100vh; background-color: #ffbbec"
-      >
-        <!--Regalos-->
-        <div class="container">
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 text-center">
-              <h1
-                class="font"
-                style="color: #4d041c"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                Mesa de Regalos
-              </h1>
-            </div>
-          </div>
-          <div class="row text-center d-flex justify-content-center mb-5">
-            <div
-              class="col-11 col-md-9 d-flex justify-content-center align-items-center"
-            >
-              <p
-                class="font-number"
-                style="text-align: justify; font-size: 2vw; margin-bottom: -10%"
-                data-aos="fade-right"
-                data-aos-duration="800"
-              >
-                Su compañía en este día especial es lo más importante para
-                nosotros. Sabemos que algunos de ustedes han expresado interés
-                en contribuir de alguna manera a nuestro día especial. Si desean
-                hacerlo, hemos decidido que una contribución económica a su
-                consideración sería lo ideal Queremos enfatizar que su presencia
-                es lo más importante para nosotros, y ninguna contribución es
-                necesaria para celebrar juntos.
-              </p>
-            </div>
-          </div>
-          <div class="row d-flex justify-content-center mt-5">
-            <div class="col-12 col-sm-10 d-flex justify-content-center mt-5">
-              <img
-                src="img/regalo.png"
-                alt="Regalo"
-                style="
-                  max-height: 200px;
-                  max-width: 99vh;
-                  margin-bottom: -100px;
-                "
-                data-aos="zoom-in-up"
-                data-aos-duration="1000"
-              />
-            </div>
-          </div>
+      <div class="row mt-5 center c-color-900">
+        <h2 class="col-12 text-center font" data-aos="fade-right">
+          Codigo de vestimenta
+        </h2>
+        <div
+          class="col-8"
+          style="
+            height: 20vh;
+            background-image: url(img/vestimentCode.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          "
+          data-aos="fade-up-left"
+        ></div>
+        <h3 class="col-12 font text-center" data-aos="fade-down">
+          Semi Formal
+        </h3>
+      </div>
+      <div class="row mt-5 mb-5 center c-color-900">
+        <h2 class="font text-center col-12 c-color-950" data-aos="zoom-in-up">
+          Confirmar Asistencia
+        </h2>
+        <h3 class="font text-center col-12 c-color-950" data-aos="zoom-in-up">
+          Enviame un mensaje
+        </h3>
+        <h3 class="font text-center col-12 c-color-950" data-aos="zoom-out">
+          👇
+        </h3>
+        <div
+          class="col-3 center font-2 c-color-800 me-1"
+          style="
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 2px;
+            border-color: #8a1e72;
+            border-style: solid;
+          "
+        >
+          <a
+            class="c-color-900"
+            href="https://wa.link/j2aki2"
+            style="text-decoration: none"
+            >Confirmar</a
+          >
         </div>
       </div>
-      <!-- #endregion -->
     </main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      
     </script>
-
+    
     <script src="js/leafs.js"></script>
     <script src="js/music.js"></script>
-    <script src="js/sobre.js"></script>
     <script src="js/text.js"></script>
     <script src="js/desplazamiento.js"></script>
-    <script src="js/navbar.js"></script>
     <script src="js/contador.js"></script>
+    <script src="js/sobre.js"></script>
   </body>
 </html>
