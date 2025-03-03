@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DEV Invitacion</title>
+    <title>Sofia Invitacion</title>
 
-    <link rel="icon" href="img/flower.png" type="png" />
+    <link rel="icon" href="img/Cerezos/flower.png" type="png" />
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -26,7 +26,6 @@
     <div
       class="modal-co index-full contain enter-done"
       id="all"
-      style="background-color: #f5edd1; position: fixed; z-index: 99; width: 100vw;"
     >
       <div class="envelope-wrapper" id="Carta" onclick="carta()">
         <div class="envelope">
@@ -43,19 +42,7 @@
     </div>
     <!-- #endregion -->
     <header
-      class="vh-100"
-      style="
-        background-image: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.212) 30%,
-            rgb(255, 255, 255)
-          ),
-          url('img/Cerezos/bgCerezo.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 100vw;
-        background-size: cover;
-      "
+      class="vh-100 header"
     >
       <div class="center vh-100">
         <div class="row center col-10">
@@ -92,115 +79,84 @@
       </div>
     </header>
 
-    <main class="container mt-5">
+    <main class="container mt-5" style="position: relative;">
       <div class="row center">
         <div class="col-12">
-          <h2 class="font text-center c-color-950" data-aos="zoom-in-up">
+          <h2 class="font text-center c-color-950 aos" data-aos="zoom-in-up">
             En agradecimiento a mis padres
           </h2>
-          <h3 class="font text-center c-color-900" data-aos="zoom-in-up">
+          <h3 class="font text-center c-color-900 aos" data-aos="zoom-in-up">
             Daniel Gamboa
           </h3>
-          <h3 class="font text-center c-color-900" data-aos="zoom-in-up">
+          <h3 class="font text-center c-color-900 aos" data-aos="zoom-in-up">
             Carolina Cisneros
           </h3>
         </div>
         <div
-          class="col-8"
+          class="col-8 img-cont aos"
           style="
             height: 15vh;
             background-image: url(img/Cerezos/cerezo.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
           "
           data-aos="zoom-in-up"
         ></div>
       </div>
       <div class="row mt-5 text-center center c-color-950">
-        <h2 class="col-12 text-center font" data-aos="fade-right">
+        <h2 class="col-12 text-center font aos" data-aos="fade-right">
           Reserva la fecha
         </h2>
-        <h3 class="col-12 font-2" data-aos="fade-right">Sabado</h3>
-        <h2 class="col-2 font" data-aos="fade-right">Jun</h2>
-        <h1 class="col-2 font-2" data-aos="fade-right">21</h1>
-        <h3 class="col-2 font-2" data-aos="fade-right">2025</h3>
+        <h3 class="col-12 font-2 aos" data-aos="fade-right">Sabado</h3>
+        <h2 class="col-2 font aos" data-aos="fade-right">Jun</h2>
+        <h1 class="col-2 font-2 aos" data-aos="fade-right">21</h1>
+        <h3 class="col-2 font-2 aos" data-aos="fade-right">2025</h3>
       </div>
       <div class="row mt-5 c-color-950">
-        <h2 class="col-12 font text-center" data-aos="zoom-in-up">
+        <h2 class="col-12 font text-center aos" data-aos="zoom-in-up">
           Cuanto falta?
         </h2>
         <div
-          class="col-3 center font-2"
-          style="
-            height: 17vh;
-            background-image: url(img/Cerezos/flower.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-          "
+          class="col-3 center font-2 img-cere aos"
           data-aos="zoom-in-up"
           id="days"
         ></div>
         <div
-          class="col-3 center font-2"
-          style="
-            height: 17vh;
-            background-image: url(img/Cerezos/flower.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-          "
+          class="col-3 center font-2 img-cere aos"
           data-aos="zoom-in-up"
           id="hours"
         ></div>
         <div
-          class="col-3 center font-2"
-          style="
-            height: 17vh;
-            background-image: url(img/Cerezos/flower.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-          "
+          class="col-3 center font-2 img-cere aos"
           data-aos="zoom-in-up"
           id="minutes"
         ></div>
         <div
-          class="col-3 center font-2"
-          style="
-            height: 17vh;
-            background-image: url(img/Cerezos/flower.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-          "
+          class="col-3 center font-2 img-cere aos"
           data-aos="zoom-in-up"
           id="seconds"
         ></div>
         <div
-          class="col-3 text-center font-2"
+          class="col-3 text-center font-2 aos"
           style="height: 5vh"
           data-aos="zoom-in-up"
         >
           Dias
         </div>
         <div
-          class="col-3 text-center font-2"
+          class="col-3 text-center font-2 aos"
           style="height: 5vh"
           data-aos="zoom-in-up"
         >
           Horas
         </div>
         <div
-          class="col-3 text-center font-2"
+          class="col-3 text-center font-2 aos"
           style="height: 5vh"
           data-aos="zoom-in-up"
         >
           Minutos
         </div>
         <div
-          class="col-3 text-center font-2"
+          class="col-3 text-center font-2 aos"
           style="height: 5vh"
           data-aos="zoom-in-up"
         >
@@ -208,48 +164,30 @@
         </div>
       </div>
       <div class="row mt-5 center c-color-900">
-        <h2 class="col-12 font text-center" data-aos="fade-right">Recepcion</h2>
+        <h2 class="col-12 font text-center aos" data-aos="fade-right">Recepcion</h2>
         <div
-          class="col-10"
+          class="col-10 img-cont aos"
           style="
             height: 20vh;
             background-image: url(img/Cerezos/cerezoTop.png);
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
           "
           data-aos="zoom-in-up"
         ></div>
-        <h4 class="col-12 font-2 text-center" data-aos="fade-left">
+        <h4 class="col-12 font-2 text-center aos" data-aos="fade-left">
           Villa Palmiere
         </h4>
-        <h4 class="col-12 font-2 text-center mb-3" data-aos="fade-right">
+        <h4 class="col-12 font-2 text-center mb-3 aos" data-aos="fade-right">
           44 Av Zapotecas
         </h4>
         <div
           data-aos="fade-up-right"
-          class="col-4 col-sm-3 center font-2 c-color-800 me-1"
-          style="
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border: 2px;
-            border-color: #8a1e72;
-            border-style: solid;
-            white-space: nowrap;
-          "
+          class="col-4 col-sm-3 center font-2 c-color-800 me-1 btn-Custom aos"
         >
           8:00 pm
         </div>
         <div
           data-aos="fade-up-left"
-          class="col-4 col-sm-3 center font-2 c-color-800 ms-1"
-          style="
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border: 2px;
-            border-color: #8a1e72;
-            border-style: solid;
-          "
+          class="col-4 col-sm-3 center font-2 c-color-800 ms-1 btn-Custom aos"
         >
           <a
             class="c-color-900"
@@ -260,43 +198,33 @@
         </div>
       </div>
       <div class="row mt-5 center c-color-900">
-        <h2 class="col-12 text-center font" data-aos="fade-right">
+        <h2 class="col-12 text-center font aos" data-aos="fade-right">
           Codigo de vestimenta
         </h2>
         <div
-          class="col-8"
+          class="col-8 img-cont aos"
           style="
             height: 20vh;
             background-image: url(img/vestimentCode.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
           "
           data-aos="fade-up-left"
         ></div>
-        <h3 class="col-12 font text-center" data-aos="fade-down">
+        <h3 class="col-12 font text-center aos" data-aos="fade-down">
           Semi Formal
         </h3>
       </div>
       <div class="row mt-5 mb-5 center c-color-900">
-        <h2 class="font text-center col-12 c-color-950" data-aos="zoom-in-up">
+        <h2 class="font text-center col-12 c-color-950 aos" data-aos="zoom-in-up">
           Confirmar Asistencia
         </h2>
-        <h3 class="font text-center col-12 c-color-950" data-aos="zoom-in-up">
+        <h3 class="font text-center col-12 c-color-950 aos" data-aos="zoom-in-up">
           Enviame un mensaje
         </h3>
-        <h3 class="font text-center col-12 c-color-950" data-aos="zoom-out">
+        <h3 class="font text-center col-12 c-color-950 aos" data-aos="zoom-out">
           👇
         </h3>
         <div
-          class="col-3 center font-2 c-color-800 me-1"
-          style="
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border: 2px;
-            border-color: #8a1e72;
-            border-style: solid;
-          "
+          class="col-3 center font-2 c-color-800 me-1 btn-Custom"
         >
           <a
             class="c-color-900"
@@ -307,7 +235,6 @@
         </div>
       </div>
     </main>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       

@@ -3,7 +3,6 @@ body {
   padding: 0;
   overflow: scroll;
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -101,11 +100,12 @@ h2 {
 
 /* #endregion */
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .contain {
   height: 100vh;
   display: grid;
@@ -318,4 +318,46 @@ h2 {
   height: 100%;
   background: #ff69b4;
   transition: width 0.1s linear;
+}
+
+#all {
+  background-color: #f5edd1;
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
+}
+
+.header {
+  background-image: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.212) 30%,
+      rgb(255, 255, 255)),
+    url('../img/Cerezos/bgCerezo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  background-size: cover;
+}
+.btn-Custom{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 2px;
+  border-color: #8a1e72;
+  border-style: solid;
+  white-space: nowrap;
+}
+.img-cont{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.img-cere{
+  height: 17vh;
+  background-image: url(../img/Cerezos/flower.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.aos{
+  position: static;
 }
