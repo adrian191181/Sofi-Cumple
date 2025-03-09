@@ -35,7 +35,7 @@ hvr {
 }
 
 h1 {
-  font-size: calc(3rem + 1.5vw)
+  font-size: calc(3.5rem + 1.5vw)
 }
 
 h2 {
@@ -45,13 +45,13 @@ h2 {
 
 /* #region Fonts*/
 @font-face {
-  font-family: 'DancingScript';
-  src: url('/fonts/DancingScript.ttf') format('truetype');
+  font-family: 'LavishlyYours';
+  src: url('/fonts/LavishlyYours.ttf') format('truetype');
 
 }
 
 .font {
-  font-family: 'DancingScript';
+  font-family: 'LavishlyYours';
 }
 
 @font-face {
