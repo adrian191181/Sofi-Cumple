@@ -22,11 +22,10 @@ const dropLeafs = () => {
 
   if (availableLeaf) {
     let x = Math.random() * (innerWidth - 40);
-    let size = randomNumber(2, 4); //vh
+    let size = randomNumber(2.5, 4);
     let z = Math.random() * 100;
     let duration = Math.random() * 10 + 5;
-
-    let hueRotate = Math.random() * 360;
+    let hueRotate = Math.random() * 60 + 300; 
     let randomImage = leafImages[Math.floor(Math.random() * leafImages.length)];
 
     availableLeaf.style.left = `${x}px`;
@@ -35,7 +34,7 @@ const dropLeafs = () => {
     availableLeaf.style.zIndex = z;
     availableLeaf.style.animationDuration = `${duration}s`;
     availableLeaf.style.backgroundImage = `url(${randomImage})`;
-    availableLeaf.style.filter = `hue-rotate(${hueRotate}deg)`;
+    availableLeaf.style.filter = `hue-rotate(${hueRotate}deg) saturate(350%) brightness(110%)`;
     availableLeaf.style.display = "block"; // Mostrar la hoja
 
     setTimeout(() => {
@@ -46,6 +45,6 @@ const dropLeafs = () => {
 
 setInterval(dropLeafs, 300); // Reducir el intervalo para suavizar la animación
 
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+function randomNumber(min, max, decimals = 2) {
+  return Number((Math.random() * (max - min) + min).toFixed(decimals));
 }

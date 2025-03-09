@@ -14,6 +14,10 @@ html, body {
   width: 100vw;
   overflow-x: hidden !important;
 }
+hvr {
+  border-left: 2px solid black;
+  height: 200px;
+}
 ::-webkit-scrollbar {
   display: none;
 }
@@ -41,24 +45,23 @@ h2 {
 
 /* #region Fonts*/
 @font-face {
-  font-family: 'LovelyFont';
-  src: url('/fonts/lovely.ttf') format('truetype');
+  font-family: 'DancingScript';
+  src: url('/fonts/DancingScript.ttf') format('truetype');
 
 }
 
 .font {
-  font-family: 'LovelyFont';
+  font-family: 'DancingScript';
 }
 
 @font-face {
-  font-family: 'fonttwo';
+  font-family: 'Numbers';
   src: url('/fonts/numbers.ttf') format('truetype');
 }
 
 .font-2 {
-  font-family: 'fonttwo';
+  font-family: 'Numbers';
 }
-
 /* #endregion */
 /* #region Colors*/
 .c-color-50 {
@@ -270,17 +273,19 @@ h2 {
   overflow: hidden;
   will-change: transform, top;
 }
-
+#frase{
+  font-size: clamp(19px, 3vw, 24px);
+}
 @keyframes leafs {
   0% {
     background-size: contain;
     top: 0;
     transform: rotate(0deg) translateX(0);
-    filter: hue-rotate(0deg) contrast(1);
+    
   }
 
   20% {
-    filter: hue-rotate(60deg);
+    transform: rotate(30deg) translateX(-20px);
   }
 
   50% {
@@ -289,9 +294,8 @@ h2 {
 
   100% {
     top: calc(100vh + 50px);
-    /* Termina fuera de la vista */
     transform: rotate(360deg) translateX(50px);
-    filter: hue-rotate(0deg) contrast(1);
+    
   }
 }
 
@@ -350,7 +354,8 @@ h2 {
   border: 2px;
   border-color: #8a1e72;
   border-style: solid;
-  white-space: nowrap;
+  color: #711e5d;
+  background-color: white;
 }
 .img-cont{
   background-position: center;
@@ -373,4 +378,8 @@ h2 {
   background-size: contain;
   overflow: hidden;
   will-change: transform, top;
+}
+
+.f-1{
+  font-size: clamp(25px,5vw,45px);
 }

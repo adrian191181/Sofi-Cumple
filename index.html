@@ -16,6 +16,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -45,14 +46,14 @@
       class="vh-100 header"
     >
       <div class="center vh-100">
-        <div class="row center col-10">
+        <div class="row center col-12">
           <div class="col-12 text-center c-color-950">
-            <h1 class="font">Mis XV</h1>
+            <h1 class="font">Sofia Lizeth</h1>
           </div>
           <div class="col-12 text-center c-color-900">
-            <h2 class="font">Sofia Lizeth</h2>
+            <h2 class="font">Mis XV</h2>
           </div>
-          <div class="col-9 center">
+          <div class="col-7 center">
             <div class="d-flex align-items-center gap-2">
               <button class="play-btn" id="playPause" onclick="music()">
                 <i class="fa fa-play c-color-900" id="playIco"></i>
@@ -60,10 +61,10 @@
               <div class="progress-bar">
                 <div class="progress" id="progress"></div>
               </div>
-              <audio id="audio" src="song/music.mp3"></audio>
+              <audio id="audio" src="song/musi.mp3"></audio>
             </div>
           </div>
-          <div class="col-11 col-sm-8 mt-3">
+          <div class="col-12 col-sm-9 col-lg-6 mt-3">
             <p
               style="font-style: italic; text-align: justify"
               class="font-2 c-color-800"
@@ -78,22 +79,26 @@
         </div>
       </div>
     </header>
-
     <main class="container mt-5" style="position: relative;">
-      <div class="row center">
-        <div class="col-12">
-          <h2 class="font text-center c-color-950 aos" data-aos="zoom-in-up">
-            En agradecimiento a mis padres
-          </h2>
-          <h3 class="font text-center c-color-900 aos" data-aos="zoom-in-up">
+      <div class="row text-center c-color-950">
+        <h1 class="font"
+        data-aos="fade-up-right"
+        >Celebra con nosotros este dia tan maravilloso</h1>
+      </div>
+      <div class="row text-center mt-5">
+          <h1 class="font text-center c-color-900 aos col-12" data-aos="zoom-in-up">
+            Mis padres
+          </h1>
+          <p data-aos="fade-up">|</p>
+          <h3 class="font text-center c-color-800 aos col-12" data-aos="zoom-in-up">
             Daniel Gamboa
           </h3>
-          <h3 class="font text-center c-color-900 aos" data-aos="zoom-in-up">
+          <p data-aos="fade-up">|</p>
+          <h3 class="font text-center c-color-800 aos col-12" data-aos="zoom-in-up">
             Carolina Cisneros
           </h3>
-        </div>
         <div
-          class="col-8 img-cont aos"
+          class="col-12 img-cont aos center"
           style="
             height: 15vh;
             background-image: url(img/Cerezos/cerezo.png);
@@ -106,13 +111,13 @@
           Reserva la fecha
         </h2>
         <h3 class="col-12 font-2 aos" data-aos="fade-right">Sabado</h3>
-        <h2 class="col-2 font aos" data-aos="fade-right">Jun</h2>
-        <h1 class="col-2 font-2 aos" data-aos="fade-right">21</h1>
-        <h3 class="col-2 font-2 aos" data-aos="fade-right">2025</h3>
+        <h2 class="col-2 col-lg-1 font aos" data-aos="fade-right">Jun</h2>
+        <h1 class="col-2 col-lg-1 font-2 aos" data-aos="fade-right">21</h1>
+        <h3 class="col-2 col-lg-1 font-2 aos" data-aos="fade-right">2025</h3>
       </div>
       <div class="row mt-5 c-color-950">
         <h2 class="col-12 font text-center aos" data-aos="zoom-in-up">
-          Cuanto falta?
+          ¿Cuanto falta?
         </h2>
         <div
           class="col-3 center font-2 img-cere aos"
@@ -163,6 +168,16 @@
           Segundos
         </div>
       </div>
+      <div class="row center mt-5" style="border-radius: 10px; border: 2px solid;">
+        <h2 class="col-12 text-center font" id="familia">!Estan invitados¡</h2>
+        <h3 class="col-12 text-center font" id="familia-title">Familia: </h3>
+        <h4 class="col-12 text-center font" id="invitation-text">¡Los esperamos! </h4>
+        <div class="col-12 center font-2" style="height: 20vh;">
+          <h2 id="pases">0 pases</h2>
+        </div>
+        <h4 class="col-12 text-center font">Confirmar asistencia antes del 21 mayo</h4>
+        <button class="btn-Custom col-5 mb-3 mt-2" id="comfirmbtn">Confirmar Asistencia</button>
+      </div>
       <div class="row mt-5 center c-color-900">
         <h2 class="col-12 font text-center aos" data-aos="fade-right">Recepcion</h2>
         <div
@@ -182,12 +197,14 @@
         <div
           data-aos="fade-up-right"
           class="col-4 col-sm-3 center font-2 c-color-800 me-1 btn-Custom aos"
+          style="white-space: nowrap;"
         >
           8:00 pm
         </div>
         <div
           data-aos="fade-up-left"
           class="col-4 col-sm-3 center font-2 c-color-800 ms-1 btn-Custom aos"
+          style="white-space: nowrap;"
         >
           <a
             class="c-color-900"
@@ -212,28 +229,21 @@
         <h3 class="col-12 font text-center aos" data-aos="fade-down">
           Semi Formal
         </h3>
-      </div>
-      <div class="row d-flex justify-content-center align-items-center mt-5">
-        <div class="col-12 text-center">
-          <h1 class="font" style="color: #4d041c" data-aos="zoom-in" data-aos-duration="1000">Mesa de Regalos</h1>
+        <div class="col-12 d-flex gap-1 justify-content-center" data-aos="fade-up-right">
+          <h4 class="font-2">Color reservado: </h4>
+          <div style="height: 30px; width: 30px; background-color:pink; border-radius: 50%; "></div>
+          <h4 class="font-2">Rosa</h4>
         </div>
+      </div>
+      
+      <div class="row d-flex justify-content-center mt-5">
+          <img src="img/regalo.png" alt="Regalo" style="max-height: 25vh; max-width: 25vh;" data-aos="zoom-in-up" data-aos-duration="1000">
       </div>
       <div class="row text-center d-flex justify-content-center">
         <div class="col-11 col-md-9 d-flex justify-content-center align-items-center">
-          <p class="font-number" style="text-align: justify;" data-aos="fade-right" data-aos-duration="1000">
-            Su compañía en este día especial es lo más importante para
-            nosotros. Sabemos que algunos de ustedes han expresado interés en
-            contribuir de alguna manera a nuestro día especial. Si desean
-            hacerlo, hemos decidido que una contribución económica a su
-            consideración sería lo ideal Queremos enfatizar que su presencia
-            es lo más importante para nosotros, y ninguna contribución es
-            necesaria para celebrar juntos.
+          <p class="f-1 c-color-900 font" style="text-align: justify;" data-aos="fade-right" data-aos-duration="1000">
+            Nos gustaría que su presencia sea lo más importante en este día especial. Algunos han mostrado interés en contribuir, por lo que hemos decidido que una aportación económica, si lo desean, sería lo ideal. Sin embargo, queremos recalcar que no es necesario hacer ninguna contribución para celebrar juntos.
           </p>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-center">
-        <div class="col-12 col-sm-10 d-flex justify-content-center">
-          <img src="img/regalo.png" alt="Regalo" style="max-height: 300px; max-width: 99vh;" data-aos="zoom-in-up" data-aos-duration="1000">
         </div>
       </div>
       <div class="row mt-5 mb-5 center c-color-900">
@@ -243,11 +253,12 @@
         <h3 class="font text-center col-12 c-color-950 aos" data-aos="zoom-in-up">
           Enviame un mensaje
         </h3>
-        <h3 class="font text-center col-12 c-color-950 aos" data-aos="zoom-out">
+        <h3 class="font text-center col-12 c-color-950 aos" data-aos="zoom-in-up">
           👇
         </h3>
         <div
-          class="col-3 center font-2 c-color-800 me-1 btn-Custom"
+          class="col-3 center font-2 c-color-800 me-1 btn-Custom mb-5"
+          data-aos="zoom-out"
         >
           <a
             class="c-color-900"
@@ -259,15 +270,12 @@
       </div>
       
     </main>
+    <script src="js/form.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      
-    </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
     <script src="js/leafs.js"></script>
     <script src="js/music.js"></script>
     <script src="js/text.js"></script>
-    <script src="js/desplazamiento.js"></script>
     <script src="js/contador.js"></script>
     <script src="js/sobre.js"></script>
   </body>
