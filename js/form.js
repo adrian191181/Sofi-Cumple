@@ -56,7 +56,6 @@ if (familias[id]) {
   elemento.remove();
 }
 document.getElementById("comfirmbtn").addEventListener("click", function () {
-    document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Generando...`;
     if (!familias[id]) {
         Swal.fire("Error", "No se encontró la familia en el registro.", "error");
         return; // Detiene la ejecución si el ID no es válido
@@ -122,8 +121,12 @@ document.getElementById("comfirmbtn").addEventListener("click", function () {
     didClose: () => {
         // Habilita nuevamente el scroll al cerrar la alerta
         document.body.classList.remove("no-scroll");
+        setTimeout(function() {
+          document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+        }, 3000);
       },
     preConfirm: () => {
+    document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
       const asistencia = Swal.getPopup().querySelector(
         'input[name="Confirmacion"]:checked'
       )?.value;
@@ -180,4 +183,7 @@ document.getElementById("comfirmbtn").addEventListener("click", function () {
         });
     }
   });
+  setTimeout(function() {
+    document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+  }, 3000);
 });
