@@ -50,7 +50,7 @@ h2 {
 
 }
 
-.font {
+.font-2 {
   font-family: 'LavishlyYours';
 }
 
@@ -59,8 +59,17 @@ h2 {
   src: url('/fonts/numbers.ttf') format('truetype');
 }
 
-.font-2 {
+.font {
   font-family: 'Numbers';
+}
+
+@font-face {
+  font-family: 'lovely';
+  src: url('/fonts/lovely.ttf') format('truetype');
+}
+
+.font-3 {
+  font-family: 'lovely';
 }
 /* #endregion */
 /* #region Colors*/
@@ -122,10 +131,6 @@ h2 {
   place-items: center;
 }
 
-.contain>.envelope-wrapper {
-  background: var(--bg-envelope-color);
-}
-
 .envelope-wrapper {
   cursor: pointer;
 }
@@ -176,8 +181,6 @@ h2 {
 }
 
 .envelope>.letter>.text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
   color: var(--txt-color);
   text-align: left;
   font-size: 10px;
@@ -332,7 +335,9 @@ h2 {
 }
 
 #all {
-  background-color: #f5edd1;
+  background-image: url(../img/backgroundCarta.jpg);
+  background-size: cover;
+  background-position: center;
   position: fixed;
   z-index: 99;
   width: 100vw;
@@ -381,5 +386,8 @@ h2 {
 }
 
 .f-1{
-  font-size: clamp(25px,5vw,45px);
+  font-size: clamp(25px,5vw,35px);
+}
+.no-scroll {
+  overflow: auto;
 }
