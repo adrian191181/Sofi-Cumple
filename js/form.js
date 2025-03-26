@@ -3,10 +3,10 @@ console.log("Inicie");
 function eliminarElemento() {
   const btnConfirm = document.getElementById("comfirmbtn");
   btnConfirm.remove();
-  document.getElementById("confirmInf").innerHTML=`Ya paso la fecha de confirmacion`;
-  document.getElementById("familia").innerText="Espero que ya hayas confirmado";
+  document.getElementById("confirmInf").innerHTML = `Ya paso la fecha de confirmacion`;
+  document.getElementById("familia").innerText = "Espero que ya hayas confirmado";
   document.getElementById("familia-title").remove();
-  document.getElementById("invitation-text").innerHTML=`Por que...`;
+  document.getElementById("invitation-text").innerHTML = `Por que...`;
   document.getElementById("divPases").remove();
   console.log("Elemento eliminado correctamente.");
 
@@ -114,132 +114,263 @@ function verificarFecha() {
         Swal.fire("Error", "No se encontró la familia en el registro.", "error");
         return; // Detiene la ejecución si el ID no es válido
       }
-      document.body.classList.add("no-scroll");
-      Swal.fire({
-        title: "Confirma tu asistencia",
-        html: `
+      if (familias[id].pases == 1) {
+
+        document.body.classList.add("no-scroll");
+        Swal.fire({
+          title: "Confirma tu asistencia",
+          html: `
         <form id="form" class="container-fluid text-start">
             <div class="mb-3">
                 <label class="form-label">¿Asistirás?</label>
                 <div class="form-check">
-                    <input 
-                        type="radio" 
-                        class="form-check-input"
-                        name="Confirmacion" 
-                        value="Asistire" 
-                        onclick="document.getElementById('pases-field').style.display = 'block';
-                                 document.getElementById('pases-input').value = '';" /> 
-                    <label class="form-check-label">Asistiré</label>
+                <input 
+                type="radio" 
+                class="form-check-input"
+                name="Confirmacion" 
+                value="Asistire" 
+                onclick="document.getElementById('pases-field').style.display = 'block';
+                document.getElementById('pases-input').value = '1';" /> 
+                <label class="form-check-label">Asistiré</label>
                 </div>
                 <div class="form-check">
-                    <input 
-                        type="radio" 
-                        class="form-check-input"
-                        name="Confirmacion" 
-                        value="No podre asistir" 
-                        onclick="document.getElementById('pases-field').style.display = 'none';
-                                 document.getElementById('pases-input').value = '0';" />
-                    <label class="form-check-label">No podré asistir</label>
+                <input 
+                type="radio" 
+                class="form-check-input"
+                name="Confirmacion" 
+                value="No podre asistir" 
+                onclick="document.getElementById('pases-field').style.display = 'none';
+                document.getElementById('pases-input').value = '0';" />
+                <label class="form-check-label">No podré asistir</label>
                 </div>
-            </div>
-
-            <div class="mb-3" id="pases-field">
+                </div>
+                
+                <div class="mb-3" id="pases-field" hidden>
                 <label class="form-label">¿Cuántas personas irán?</label>
                 <input 
-                    id="pases-input"
-                    class="form-control" 
-                    type="number" 
-                    min="0" 
-                    max="${familias[id]?.pases || 0}" 
-                    placeholder="Número de pases" 
-                    name="Pases" />
-            </div>
-
-            <div class="mb-3">
+                id="pases-input"
+                class="form-control" 
+                type="number" 
+                placeholder="Número de pases" 
+                name="Pases" />
+                </div>
+                
+                <div class="mb-3">
                 <label class="form-label">Mensaje para la Quinceañera</label>
                 <textarea 
-                    class="form-control"
-                    rows="3"
-                    placeholder="Escribe tu mensaje especial..." 
-                    name="Mensaje" 
-                    id="mensaje"></textarea>
-            </div>
-        </form>
-        `,
-        showCancelButton: true,
-        confirmButtonText: "Enviar",
-        cancelButtonText: "Cancelar",
-        backdrop: true,
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        didClose: () => {
-          // Habilita nuevamente el scroll al cerrar la alerta
-          document.body.classList.remove("no-scroll");
-          setTimeout(function () {
-            document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
-          }, 3000);
-        },
-        preConfirm: () => {
-          document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
-          const asistencia = Swal.getPopup().querySelector(
-            'input[name="Confirmacion"]:checked'
-          )?.value;
-          const mensaje = Swal.getPopup().querySelector("#mensaje").value;
-          const pases = Swal.getPopup().querySelector('input[name="Pases"]').value;
+                class="form-control"
+                rows="3"
+                placeholder="Escribe tu mensaje especial..." 
+                name="Mensaje" 
+                id="mensaje"></textarea>
+                </div>
+                </form>
+                `,
+          showCancelButton: true,
+          confirmButtonText: "Enviar",
+          cancelButtonText: "Cancelar",
+          backdrop: true,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          didClose: () => {
+            // Habilita nuevamente el scroll al cerrar la alerta
+            document.body.classList.remove("no-scroll");
+            setTimeout(function () {
+              document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+            }, 3000);
+          },
+          preConfirm: () => {
+            document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
+            const asistencia = Swal.getPopup().querySelector(
+              'input[name="Confirmacion"]:checked'
+            )?.value;
+            const mensaje = Swal.getPopup().querySelector("#mensaje").value;
+            const pases = Swal.getPopup().querySelector('input[name="Pases"]').value;
 
-          if (!asistencia || !mensaje.trim()) {
-            Swal.showValidationMessage("Por favor, completa todos los campos.");
-          }
-          if (pases > familias[id]?.pases) {
-            Swal.showValidationMessage("Usted solo tiene: " + familias[id]?.pases + " pases disponibles");
-          }
-          return { asistencia, mensaje, pases };
-        },
-      }).then((result) => {
-        if (result.isConfirmed) {
-          console.log("Asistencia:", result.value.asistencia);
-          console.log("Mensaje:", result.value.mensaje);
-          console.log("Pases:", result.value.pases);
-
-          // Aquí agregarás el código para enviar los datos del formulario
-          const formData = new FormData();
-          formData.append("Confirmacion", result.value.asistencia);
-          formData.append("Mensaje", result.value.mensaje);
-          formData.append("Pases", result.value.pases);
-          formData.append("Familia", familias[id]?.familia);
-
-          // Llamar al script de Google Apps Script
-          fetch(
-            "https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec",
-            {
-              method: "POST",
-              body: formData,
+            if (!asistencia || !mensaje.trim()) {
+              Swal.showValidationMessage("Por favor, completa todos los campos.");
             }
-          )
-            .then((response) => {
-              if (response.ok) {
-                Swal.fire(
-                  "¡Confirmado!",
-                  "Tu asistencia ha sido registrada.",
-                  "success"
-                );
-              } else {
-                Swal.fire(
-                  "Error",
-                  "Hubo un problema al enviar los datos.",
-                  "error"
-                );
+            if (pases > familias[id]?.pases) {
+              Swal.showValidationMessage("Usted solo tiene: " + familias[id]?.pases + " pases disponibles");
+            }
+            return { asistencia, mensaje, pases };
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Asistencia:", result.value.asistencia);
+            console.log("Mensaje:", result.value.mensaje);
+            console.log("Pases:", result.value.pases);
+
+
+            // Aquí agregarás el código para enviar los datos del formulario
+            const formData = new FormData();
+            formData.append("Confirmacion", result.value.asistencia);
+            formData.append("Mensaje", result.value.mensaje);
+            formData.append("Pases", result.value.pases);
+            formData.append("Familia", familias[id]?.familia);
+
+            // Llamar al script de Google Apps Script
+            fetch(
+              "https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec",
+              {
+                method: "POST",
+                body: formData,
               }
-            })
-            .catch((error) => {
-              Swal.fire("Error", "Hubo un error en la comunicación.", "error");
-              console.error("Error:", error);
-            });
-        }
-      });
-      setTimeout(function () {
-        document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
-      }, 3000);
+            )
+              .then((response) => {
+                if (response.ok) {
+                  Swal.fire(
+                    "¡Confirmado!",
+                    "Tu asistencia ha sido registrada.",
+                    "success"
+                  );
+                } else {
+                  Swal.fire(
+                    "Error",
+                    "Hubo un problema al enviar los datos.",
+                    "error"
+                  );
+                }
+              })
+              .catch((error) => {
+                Swal.fire("Error", "Hubo un error en la comunicación.", "error");
+                console.error("Error:", error);
+              });
+          }
+        });
+        setTimeout(function () {
+          document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+        }, 3000);
+      } else {
+
+        document.body.classList.add("no-scroll");
+        Swal.fire({
+          title: "Confirma tu asistencia",
+          html: `
+        <form id="form" class="container-fluid text-start">
+            <div class="mb-3">
+                <label class="form-label">¿Asistirás?</label>
+                <div class="form-check">
+                <input 
+                type="radio" 
+                class="form-check-input"
+                name="Confirmacion" 
+                value="Asistire" 
+                onclick="document.getElementById('pases-field').style.display = 'block';
+                document.getElementById('pases-input').value = '';" /> 
+                <label class="form-check-label">Asistiré</label>
+                </div>
+                <div class="form-check">
+                <input 
+                type="radio" 
+                class="form-check-input"
+                name="Confirmacion" 
+                value="No podre asistir" 
+                onclick="document.getElementById('pases-field').style.display = 'none';
+                document.getElementById('pases-input').value = '0';" />
+                <label class="form-check-label">No podré asistir</label>
+                </div>
+                </div>
+                
+                <div class="mb-3" id="pases-field">
+                <label class="form-label">¿Cuántas personas irán?</label>
+                <input 
+                id="pases-input"
+                class="form-control" 
+                type="number" 
+                min="0" 
+                max="${familias[id]?.pases || 0}" 
+                placeholder="Número de pases" 
+                name="Pases" />
+                </div>
+                
+                <div class="mb-3">
+                <label class="form-label">Mensaje para la Quinceañera</label>
+                <textarea 
+                class="form-control"
+                rows="3"
+                placeholder="Escribe tu mensaje especial..." 
+                name="Mensaje" 
+                id="mensaje"></textarea>
+                </div>
+                </form>
+                `,
+          showCancelButton: true,
+          confirmButtonText: "Enviar",
+          cancelButtonText: "Cancelar",
+          backdrop: true,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          didClose: () => {
+            // Habilita nuevamente el scroll al cerrar la alerta
+            document.body.classList.remove("no-scroll");
+            setTimeout(function () {
+              document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+            }, 3000);
+          },
+          preConfirm: () => {
+            document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
+            const asistencia = Swal.getPopup().querySelector(
+              'input[name="Confirmacion"]:checked'
+            )?.value;
+            const mensaje = Swal.getPopup().querySelector("#mensaje").value;
+            const pases = Swal.getPopup().querySelector('input[name="Pases"]').value;
+
+            if (!asistencia || !mensaje.trim()) {
+              Swal.showValidationMessage("Por favor, completa todos los campos.");
+            }
+            if (pases > familias[id]?.pases) {
+              Swal.showValidationMessage("Usted solo tiene: " + familias[id]?.pases + " pases disponibles");
+            }
+            return { asistencia, mensaje, pases };
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("Asistencia:", result.value.asistencia);
+            console.log("Mensaje:", result.value.mensaje);
+            console.log("Pases:", result.value.pases);
+
+
+            // Aquí agregarás el código para enviar los datos del formulario
+            const formData = new FormData();
+            formData.append("Confirmacion", result.value.asistencia);
+            formData.append("Mensaje", result.value.mensaje);
+            formData.append("Pases", result.value.pases);
+            formData.append("Familia", familias[id]?.familia);
+
+            // Llamar al script de Google Apps Script
+            fetch(
+              "https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec",
+              {
+                method: "POST",
+                body: formData,
+              }
+            )
+              .then((response) => {
+                if (response.ok) {
+                  Swal.fire(
+                    "¡Confirmado!",
+                    "Tu asistencia ha sido registrada.",
+                    "success"
+                  );
+                } else {
+                  Swal.fire(
+                    "Error",
+                    "Hubo un problema al enviar los datos.",
+                    "error"
+                  );
+                }
+              })
+              .catch((error) => {
+                Swal.fire("Error", "Hubo un error en la comunicación.", "error");
+                console.error("Error:", error);
+              });
+          }
+        });
+        setTimeout(function () {
+          document.getElementById("comfirmbtn").innerHTML = "Confirmar Asistencia";
+        }, 3000);
+      }
     });
 
   }
