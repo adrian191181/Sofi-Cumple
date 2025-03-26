@@ -1,7 +1,7 @@
 function actualizarContador() {
     // Definir la fecha y hora objetivo directamente en el código
     var fecha = "2025-06-21";
-    var hora = "19:00:00";
+    var hora = "00:00:00";
     var fechaObjetivo = new Date(`${fecha}T${hora}`);
 
     var ahora = new Date();
@@ -11,9 +11,9 @@ function actualizarContador() {
     // Si el evento ya pasó
     if (ahora > fechaObjetivo) {
         if (fechaActual > fechaEvento) {
-            document.querySelector(".row.mt-5.brd").innerHTML = `<h2 class="col-12 font text-center">La fiesta terminó 🤷‍♂️, ¡espero que la hayas pasado bien! 🫡</h2>`;
+            document.getElementById("contadorText").innerHTML = `<h2 class="col-12 font text-center">La fiesta terminó 🤷‍♂️, ¡espero que la hayas pasado bien! 🫡</h2>`;
         } else {
-            document.querySelector(".row.mt-5.brd").innerHTML = `<h2 class="col-12 font text-center">¡Hoy es el día 🎉! Mándale felicitaciones a Sofía 😍</h2>`;
+            document.getElementById("contadorText").innerHTML = `<h2 class="col-12 font text-center">¡Hoy es el día 🎉! Mándale felicitaciones a Sofía 😍</h2>`;
         }
         return;
     }

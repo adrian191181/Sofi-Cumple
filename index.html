@@ -7,16 +7,19 @@
 
     <link rel="icon" href="img/Cerezos/flower.png" type="png" />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-    crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -24,11 +27,8 @@
   <body>
     <!-- #region Void-->
     <div id="containerLeafs"></div>
-    
-    <div
-      class="modal-co index-full contain enter-done"
-      id="all"
-    >
+
+    <div class="modal-co index-full contain enter-done" id="all">
       <div class="envelope-wrapper" id="Carta" onclick="carta()">
         <h2 class="font-2 text-center">Sofia Lizeth</h2>
         <div class="envelope">
@@ -43,9 +43,7 @@
       </div>
     </div>
     <!-- #endregion -->
-    <header
-      class="vh-100 header"
-    >
+    <header class="vh-100 header">
       <div class="center vh-100">
         <div class="row center col-12">
           <div class="col-12 text-center c-color-950">
@@ -80,29 +78,38 @@
         </div>
       </div>
     </header>
-    <main class="container mt-5" style="position: relative;">
+    <main class="container mt-5" style="position: relative">
       <div class="row text-center c-color-950">
-        <h2 class="font-2"
-        data-aos="fade-up-right"
-        >¡Celebra con nosotros este dia tan maravilloso!</h2>
+        <h2 class="font-2" data-aos="fade-up-right">
+          ¡Celebra con nosotros este dia tan maravilloso!
+        </h2>
       </div>
       <div class="row text-center mt-5">
-          <h3 class="font-2 text-center c-color-900 aos col-12" data-aos="zoom-in-up" style="font-size: 25px;">
-            Mis padres
-          </h3>
-          <p data-aos="fade-up">|</p>
-          <h2 class="font-3 text-center c-color-800 aos col-12" data-aos="zoom-in-up" style="font-size: 30px;">
-            Daniel Gamboa
-          </h2>
-          <h2 class="font-3 text-center c-color-800 aos col-12" data-aos="zoom-in-up" style="font-size: 30px;">
-            Carolina Cisneros
-          </h2>
+        <h3
+          class="font-2 text-center c-color-900 aos col-12"
+          data-aos="zoom-in-up"
+          style="font-size: 25px"
+        >
+          Mis padres
+        </h3>
+        <p data-aos="fade-up">|</p>
+        <h2
+          class="font-3 text-center c-color-800 aos col-12"
+          data-aos="zoom-in-up"
+          style="font-size: 30px"
+        >
+          Daniel Gamboa
+        </h2>
+        <h2
+          class="font-3 text-center c-color-800 aos col-12"
+          data-aos="zoom-in-up"
+          style="font-size: 30px"
+        >
+          Carolina Cisneros
+        </h2>
         <div
           class="col-12 img-cont aos center"
-          style="
-            height: 15vh;
-            background-image: url(img/Cerezos/cerezo.png);
-          "
+          style="height: 15vh; background-image: url(img/Cerezos/cerezo.png)"
           data-aos="zoom-in-up"
         ></div>
       </div>
@@ -116,7 +123,7 @@
         <h2 class="col-3 col-lg-1 font aos" data-aos="fade-right">2025</h2>
         <h4 class="font" data-aos="fade-up-right">7:30pm</h4>
       </div>
-      <div class="row mt-5 c-color-950">
+      <div class="row mt-5 c-color-950" id="contadorText">
         <h1 class="col-12 font-2 text-center aos" data-aos="zoom-in-up">
           ¡Faltan!
         </h1>
@@ -169,24 +176,48 @@
           Segundos
         </div>
       </div>
-      <div class="row center mt-5 inv" style="border-radius: 10px; border: 2px solid; margin-left: 3vw; margin-right: 3vw;" data-aos="flip-left" data-aos-duration="1500">
-        <h2 class="col-12 text-center font-2 mt-5 c-color-900" id="familia">Estan invitados</h2>
-        <h3 class="col-12 text-center font-2 c-color-900" id="familia-title">Familia: </h3>
-        <h4 class="col-12 text-center font-2 c-color-950" id="invitation-text">¡Los esperamos! </h4>
-        <div class="col-12 center font-2" style="height: 20vh;">
-          <h2 id="pases" class="c-color-800">0 pases</h2>
+      <div class="center">
+        <div
+          class="row center mt-5 inv col-lg-6"
+          style="
+            border-radius: 10px;
+            border: 2px solid;
+            margin-left: 3vw;
+            margin-right: 3vw;
+          "
+          data-aos="flip-left"
+          data-aos-duration="1500"
+        >
+          <h2 class="col-12 text-center font-2 mt-5 c-color-900" id="familia">
+            Estan invitados
+          </h2>
+          <h3 class="col-12 text-center font-2 c-color-900" id="familia-title">
+            Familia:
+          </h3>
+          <h4
+            class="col-12 text-center font-2 c-color-950"
+            id="invitation-text"
+          >
+            ¡Los esperamos!
+          </h4>
+          <div class="col-12 center font-2" id="divPases" style="height: 20vh">
+            <h2 id="pases" class="c-color-800">0 pases</h2>
+          </div>
+          <h4 class="col-12 text-center font c-color-900" id="confirmInf">
+            Confirmar asistencia antes del 21 mayo
+          </h4>
+          <button class="btn-Custom col-5 mb-3 mt-2" id="comfirmbtn">
+            Confirmar Asistencia
+          </button>
         </div>
-        <h4 class="col-12 text-center font c-color-900">Confirmar asistencia antes del 21 mayo</h4>
-        <button class="btn-Custom col-5 mb-3 mt-2" id="comfirmbtn">Confirmar Asistencia</button>
       </div>
       <div class="row mt-5 center c-color-900">
-        <h2 class="col-12 font-2 text-center aos" data-aos="fade-right">Recepcion</h2>
+        <h2 class="col-12 font-2 text-center aos" data-aos="fade-right">
+          Recepcion
+        </h2>
         <div
           class="col-10 img-cont aos"
-          style="
-            height: 20vh;
-            background-image: url(img/Cerezos/cerezoTop.png);
-          "
+          style="height: 20vh; background-image: url(img/Cerezos/cerezoTop.png)"
           data-aos="zoom-in-up"
         ></div>
         <h4 class="col-12 font-3 text-center aos" data-aos="fade-left">
@@ -198,14 +229,14 @@
         <div
           data-aos="fade-up-right"
           class="col-4 col-sm-3 center font c-color-800 me-1 btn-Custom aos"
-          style="white-space: nowrap;"
+          style="white-space: nowrap"
         >
           8:00 pm
         </div>
         <div
           data-aos="fade-up-left"
           class="col-4 col-sm-3 center font c-color-800 ms-1 btn-Custom aos"
-          style="white-space: nowrap;"
+          style="white-space: nowrap"
         >
           <a
             class="c-color-900"
@@ -221,45 +252,65 @@
         </h2>
         <div
           class="col-8 img-cont aos"
-          style="
-            height: 20vh;
-            background-image: url(img/vestimentCode.png);
-          "
+          style="height: 20vh; background-image: url(img/vestimentCode.png)"
           data-aos="fade-up-left"
         ></div>
         <h3 class="col-12 font-3 text-center aos" data-aos="fade-down">
           Semi Formal
         </h3>
-        <div class="col-12 d-flex gap-1 justify-content-center" data-aos="fade-up-right">
-          <h4 class="font-2">Color reservado: </h4>
-          <div style="height: 30px; width: 30px; background-color:pink; border-radius: 50%; "></div>
+        <div
+          class="col-12 d-flex gap-1 justify-content-center"
+          data-aos="fade-up-right"
+        >
+          <h4 class="font-2">Color reservado:</h4>
+          <div
+            style="
+              height: 30px;
+              width: 30px;
+              background-color: pink;
+              border-radius: 50%;
+            "
+          ></div>
           <h4 class="font-2">Rosa</h4>
         </div>
       </div>
-      
+
       <div class="row d-flex justify-content-center mt-5">
-          <img src="img/regalo.png" alt="Regalo" style="max-height: 25vh; max-width: 25vh;" data-aos="zoom-in-up" s-duration="1000">
+        <img
+          src="img/regalo.png"
+          alt="Regalo"
+          style="max-height: 25vh; max-width: 25vh"
+          data-aos="zoom-in-up"
+          s-duration="1000"
+        />
       </div>
       <div class="row text-center d-flex justify-content-center mb-5">
-        <div class="col-11 col-md-9 d-flex justify-content-center align-items-center">
-          <p class="f-1 c-color-900 font-3" style="text-align: justify;" data-aos="fade-right" s-duration="1000">
-            Su compañía en este día especial es lo más importante para
-                nosotros. Sabemos que algunos de ustedes han expresado interés en
-                contribuir de alguna manera a nuestro día especial. Si desean
-                hacerlo, hemos decidido que una contribución económica a su
-                consideración sería lo ideal Queremos enfatizar que su presencia
-                es lo más importante para nosotros, y ninguna contribución es
-                necesaria para celebrar juntos.
+        <div
+          class="col-11 col-md-9 d-flex justify-content-center align-items-center"
+        >
+          <p
+            class="f-1 c-color-900 font-3"
+            style="text-align: justify"
+            data-aos="fade-right"
+            s-duration="1000"
+          >
+            Su compañía en este día especial es lo más importante para nosotros.
+            Sabemos que algunos de ustedes han expresado interés en contribuir
+            de alguna manera a nuestro día especial. Si desean hacerlo, hemos
+            decidido que una contribución económica a su consideración sería lo
+            ideal Queremos enfatizar que su presencia es lo más importante para
+            nosotros, y ninguna contribución es necesaria para celebrar juntos.
           </p>
         </div>
+      </div>
     </main>
+    <script src="js/contador.js"></script>
     <script src="js/form.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/leafs.js"></script>
     <script src="js/music.js"></script>
     <script src="js/text.js"></script>
-    <script src="js/contador.js"></script>
     <script src="js/sobre.js"></script>
   </body>
 </html>
