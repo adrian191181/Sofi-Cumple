@@ -41,7 +41,12 @@ h1 {
 h2 {
   font-size: calc(2.2rem + 1.5vw)
 }
-
+h3{
+  font-size: calc(1.8rem + 1.5vw)
+}
+h4{
+  font-size: calc(1.6rem + 1.5vw)
+}
 .h2 {
   font-size: calc(2.5rem + 1.5vw)
 }
@@ -267,7 +272,9 @@ h2 {
   padding: 30px;
   background: var(--envelope-cover);
 }
-
+#confirmInf{
+  font-size: calc(1rem + 1.5vw)
+}
 .brd {
   border-style: solid;
   border-color: rgba(255, 0, 0, 0.341);
