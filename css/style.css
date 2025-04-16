@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(1.5rem + 1.5vw)
+  font-size: calc(2.2rem + 1.5vw)
 }
 
 .h2 {
@@ -93,7 +93,9 @@ h2 {
 .c-color-300 {
   color: #f8afed;
 }
-
+.size{
+  font-size: clamp(22px, 3.5vw, 28px); 
+}
 .c-color-400 {
   color: #f37fe0;
 }
@@ -282,7 +284,7 @@ h2 {
   will-change: transform, top;
 }
 #frase{
-  font-size: clamp(19px, 3vw, 24px);
+  font-size: clamp(22px, 3.5vw, 28px);
 }
 @keyframes leafs {
   0% {
