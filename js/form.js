@@ -151,8 +151,10 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
     .then(response => {
       if (response.ok) {
         Swal.fire("¡Confirmado!", "Tu asistencia ha sido registrada.", "success");
+        console.log(response)
       } else {
         Swal.fire("Error", "Hubo un problema al enviar los datos.", "error");
+        console.log(response)
       }
     })
     .catch(error => {
