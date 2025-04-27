@@ -144,7 +144,7 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   formData.append("Pases", pases);
   formData.append("Familia", familia);
 
-  fetch("https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwHuscdKFn89BwEETW1qV0hu2jIkfbT6g4DB8kRSN6ZEM2c_BCxFLOmK7lHA7yDM1Pa/exec", {
     method: "POST",
     body: formData
   })
