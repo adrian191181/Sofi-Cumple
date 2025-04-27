@@ -66,56 +66,56 @@ const familias = {
   "GO05": { familia: "Maestra Violeta", pases: 1 },
   "5FLA": { familia: "Maestra Nohemi", pases: 1 },
   "0G3I": { familia: "Mestro Manuel", pases: 1 },
-  "X9T4": { "familia": "Hector", "pases": 1 },
-  "M7QA": { "familia": "Camila", "pases": 1 },
-  "Z4LN": { "familia": "Emiliano", "pases": 1 },
-  "J1RB": { "familia": "Gabriela", "pases": 1 },
-  "K3XD": { "familia": "Iram", "pases": 1 },
-  "T8YU": { "familia": "Aitana", "pases": 1 },
-  "F6EV": { "familia": "Jesui", "pases": 1 },
-  "N2MH": { "familia": "Gissel", "pases": 1 },
-  "Y3CU": { "familia": "Kelly", "pases": 1 },
-  "B5WP": { "familia": "Sara", "pases": 1 },
-  "L9KZ": { "familia": "Gabriel", "pases": 1 },
-  "R0XE": { "familia": "Santiago", "pases": 1 },
-  "V8PL": { "familia": "Ricardo", "pases": 1 },
-  "W6QS": { "familia": "Felix", "pases": 1 },
-  "A3JY": { "familia": "Emily", "pases": 1 },
-  "E7NK": { "familia": "Isabella", "pases": 1 },
-  "D2RM": { "familia": "Belem", "pases": 1 },
-  "U9BG": { "familia": "Angel", "pases": 1 },
-  "H5TD": { "familia": "Giovanni", "pases": 1 },
-  "S1XO": { "familia": "Iker", "pases": 1 },
-  "C0AQ": { "familia": "Carlos", "pases": 1 },
-  "Q8VW": { "familia": "Raúl", "pases": 1 },
-  "Z6NJ": { "familia": "Ronnie", "pases": 1 },
-  "X3YT": { "familia": "Grettel", "pases": 1 },
-  "N7LC": { "familia": "Luna", "pases": 1 },
-  "P4HS": { "familia": "Michel", "pases": 1 },
-  "Y5DE": { "familia": "Alexa", "pases": 1 },
-  "G2VK": { "familia": "Dayana", "pases": 1 },
-  "M6BO": { "familia": "Martha", "pases": 1 },
-  "K9AZ": { "familia": "Jonathan", "pases": 1 },
-  "V1QE": { "familia": "Laura", "pases": 1 },
-  "R7MN": { "familia": "Luis", "pases": 1 },
-  "L4WX": { "familia": "Antonio", "pases": 1 },
-  "F0TJ": { "familia": "Camila", "pases": 1 },
-  "E6RC": { "familia": "Emily", "pases": 1 },
-  "B3NU": { "familia": "Emiliano", "pases": 1 },
-  "T2KP": { "familia": "Daniel", "pases": 1 },
-  "A8HJ": { "familia": "Manuel", "pases": 1 },
-  "D9XM": { "familia": "Profe Manuel", "pases": 1 },
-  "H3LY": { "familia": "Profe Doris", "pases": 1 },
-  "J5BW": { "familia": "Profe Desiderio", "pases": 1 },
-  "S4EV": { "familia": "Profe Violeta", "pases": 1 },
-  "W7CJ": { "familia": "Profe Iliana", "pases": 1 },
-  "U1ZF": { "familia": "Profe Ezau", "pases": 1 },
-  "V5ND": { "familia": "Adrian", "pases": 1 },
-  "Q2LM": { "familia": "Serena", "pases": 1 },
-  "W9BJ": { "familia": "Marco", "pases": 1 },
-  "T7XP": { "familia": "Bryron", "pases": 1 },
-  "P3XW": { "familia": "Jimena", "pases": 1 },
-  "K6ZD": { "familia": "Luna", "pases": 1 }
+  "X9T4": { familia: "Hector", pases: 1 },
+  "M7QA": { familia: "Camila", pases: 1 },
+  "Z4LN": { familia: "Emiliano", pases: 1 },
+  "J1RB": { familia: "Gabriela", pases: 1 },
+  "K3XD": { familia: "Iram", pases: 1 },
+  "T8YU": { familia: "Aitana", pases: 1 },
+  "F6EV": { familia: "Jesui", pases: 1 },
+  "N2MH": { familia: "Gissel", pases: 1 },
+  "Y3CU": { familia: "Kelly", pases: 1 },
+  "B5WP": { familia: "Sara", pases: 1 },
+  "L9KZ": { familia: "Gabriel", pases: 1 },
+  "R0XE": { familia: "Santiago", pases: 1 },
+  "V8PL": { familia: "Ricardo", pases: 1 },
+  "W6QS": { familia: "Felix", pases: 1 },
+  "A3JY": { familia: "Emily", pases: 1 },
+  "E7NK": { familia: "Isabella", pases: 1 },
+  "D2RM": { familia: "Belem", pases: 1 },
+  "U9BG": { familia: "Angel", pases: 1 },
+  "H5TD": { familia: "Giovanni", pases: 1 },
+  "S1XO": { familia: "Iker", pases: 1 },
+  "C0AQ": { familia: "Carlos", pases: 1 },
+  "Q8VW": { familia: "Raúl", pases: 1 },
+  "Z6NJ": { familia: "Ronnie", pases: 1 },
+  "X3YT": { familia: "Grettel", pases: 1 },
+  "N7LC": { familia: "Luna", pases: 1 },
+  "P4HS": { familia: "Michel", pases: 1 },
+  "Y5DE": { familia: "Alexa", pases: 1 },
+  "G2VK": { familia: "Dayana", pases: 1 },
+  "M6BO": { familia: "Martha", pases: 1 },
+  "K9AZ": { familia: "Jonathan", pases: 1 },
+  "V1QE": { familia: "Laura", pases: 1 },
+  "R7MN": { familia: "Luis", pases: 1 },
+  "L4WX": { familia: "Antonio", pases: 1 },
+  "F0TJ": { familia: "Camila", pases: 1 },
+  "E6RC": { familia: "Emily", pases: 1 },
+  "B3NU": { familia: "Emiliano", pases: 1 },
+  "T2KP": { familia: "Daniel", pases: 1 },
+  "A8HJ": { familia: "Manuel", pases: 1 },
+  "D9XM": { familia: "Profe Manuel", pases: 1 },
+  "H3LY": { familia: "Profe Doris", pases: 1 },
+  "J5BW": { familia: "Profe Desiderio", pases: 1 },
+  "S4EV": { familia: "Profe Violeta", pases: 1 },
+  "W7CJ": { familia: "Profe Iliana", pases: 1 },
+  "U1ZF": { familia: "Profe Ezau", pases: 1 },
+  "V5ND": { familia: "Adrian", pases: 1 },
+  "Q2LM": { familia: "Serena", pases: 1 },
+  "W9BJ": { familia: "Marco", pases: 1 },
+  "T7XP": { familia: "Bryron", pases: 1 },
+  "P3XW": { familia: "Jimena", pases: 1 },
+  "K6ZD": { familia: "Luna", pases: 1 }
 };
 
 // Función para actualizar el HTML según el ID de familia
@@ -129,10 +129,10 @@ const actualizarDatosFamilia = id => {
     document.getElementById("familia").textContent = "Esta Invitado";
     document.getElementById("invitation-text").textContent = "!Te esperamos!";
     document.getElementById("familia-title").textContent = datos.familia;
-    document.getElementById("pases").textContent = `${datos.pases} pase`;
+    document.getElementById(pases).textContent = `${datos.pases} pase`;
   } else {
     document.getElementById("familia-title").textContent = `Familia: ${datos.familia}`;
-    document.getElementById("pases").textContent = `${datos.pases} pases`;
+    document.getElementById(pases).textContent = `${datos.pases} pases`;
   }
 };
 
@@ -141,7 +141,7 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   const formData = new FormData();
   formData.append("Confirmacion", asistencia);
   formData.append("Mensaje", mensaje);
-  formData.append("Pases", pases);
+  formData.append(pases, pases);
   formData.append("Familia", familia);
 
   fetch("https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec", {
@@ -197,7 +197,7 @@ const generarModalHtml = (esPaseUnico, maxPases = 0) => {
             min="0" 
             ${!esPaseUnico ? `max="${maxPases}"` : ""}
             placeholder="Número de pases" 
-            name="Pases" />
+            name=pases />
       </div>
       <div class="mb-3">
           <label class="form-label">Mensaje para la Quinceañera</label>
@@ -243,7 +243,7 @@ const mostrarModalConfirmacion = (id) => {
       document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
       const asistencia = Swal.getPopup().querySelector('input[name="Confirmacion"]:checked')?.value;
       const mensaje = Swal.getPopup().querySelector("#mensaje").value;
-      const pases = Swal.getPopup().querySelector('input[name="Pases"]').value;
+      const pases = Swal.getPopup().querySelector('input[name=pases]').value;
       
       if (!asistencia || !mensaje.trim()) {
         Swal.showValidationMessage("Por favor, completa todos los campos.");
