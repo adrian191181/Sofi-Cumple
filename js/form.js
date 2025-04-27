@@ -144,8 +144,9 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   formData.append("pases", pases);
   formData.append("Familia", familia);
 
-  fetch("https://script.google.com/macros/s/AKfycbz4D8FL08t_LuYTu-bxPS_6Fj1hk9E19M29TRR7qLt_ZwvFWNLLFzJqKyTrfz7pvp-GsQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyzDQxlbjX0JfSxAZkatcrkweRlMlGGlnUCXRGimqiHL2UbUKynFIuIB64jlBqpn3DYAw/exec", {
     method: "POST",
+    mode: 'no-cors',
     body: formData
   })
     .then(response => {
