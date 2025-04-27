@@ -146,7 +146,6 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
 
   fetch("https://script.google.com/macros/s/AKfycbyzDQxlbjX0JfSxAZkatcrkweRlMlGGlnUCXRGimqiHL2UbUKynFIuIB64jlBqpn3DYAw/exec", {
     method: "POST",
-    mode: 'no-cors',
     body: formData
   })
     .then(response => {
