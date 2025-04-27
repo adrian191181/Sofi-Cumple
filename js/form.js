@@ -109,7 +109,13 @@ const familias = {
   "J5BW": { "familia": "Profe Desiderio", "pases": 1 },
   "S4EV": { "familia": "Profe Violeta", "pases": 1 },
   "W7CJ": { "familia": "Profe Iliana", "pases": 1 },
-  "U1ZF": { "familia": "Profe Ezau", "pases": 1 }
+  "U1ZF": { "familia": "Profe Ezau", "pases": 1 },
+  "V5ND": { "familia": "Adrian", "pases": 1 },
+  "Q2LM": { "familia": "Serena", "pases": 1 },
+  "W9BJ": { "familia": "Marco", "pases": 1 },
+  "T7XP": { "familia": "Bryron", "pases": 1 },
+  "P3XW": { "familia": "Jimena", "pases": 1 },
+  "K6ZD": { "familia": "Luna", "pases": 1 }
 };
 
 // Función para actualizar el HTML según el ID de familia
