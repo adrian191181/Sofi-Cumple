@@ -129,10 +129,10 @@ const actualizarDatosFamilia = id => {
     document.getElementById("familia").textContent = "Esta Invitado";
     document.getElementById("invitation-text").textContent = "!Te esperamos!";
     document.getElementById("familia-title").textContent = datos.familia;
-    document.getElementById(pases).textContent = `${datos.pases} pase`;
+    document.getElementById("pases").textContent = `${datos.pases} pase`;
   } else {
     document.getElementById("familia-title").textContent = `Familia: ${datos.familia}`;
-    document.getElementById(pases).textContent = `${datos.pases} pases`;
+    document.getElementById("pases").textContent = `${datos.pases} pases`;
   }
 };
 
@@ -141,7 +141,7 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   const formData = new FormData();
   formData.append("Confirmacion", asistencia);
   formData.append("Mensaje", mensaje);
-  formData.append(pases, pases);
+  formData.append("pases", pases);
   formData.append("Familia", familia);
 
   fetch("https://script.google.com/macros/s/AKfycbyqn2SjgKjKSX7j2YqgBq_2lCehw_TIr88bI6l8dH3Kr68JQQXP-AfbmaQPLSko56JTAw/exec", {
