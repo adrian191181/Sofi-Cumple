@@ -141,7 +141,7 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   const formData = new FormData();
   formData.append("Confirmacion", asistencia);
   formData.append("Mensaje", mensaje);
-  formData.append("pases", pases);
+  formData.append("Pases", pases);
   formData.append("Familia", familia);
 
   fetch("https://script.google.com/macros/s/AKfycbyzDQxlbjX0JfSxAZkatcrkweRlMlGGlnUCXRGimqiHL2UbUKynFIuIB64jlBqpn3DYAw/exec", {
@@ -199,7 +199,7 @@ const generarModalHtml = (esPaseUnico, maxPases = 0) => {
             min="0" 
             ${!esPaseUnico ? `max="${maxPases}"` : ""}
             placeholder="Número de pases" 
-            name=pases />
+            name="Pases" />
       </div>
       <div class="mb-3">
           <label class="form-label">Mensaje para la Quinceañera</label>
@@ -245,7 +245,7 @@ const mostrarModalConfirmacion = (id) => {
       document.getElementById("comfirmbtn").innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse me-1"></i> Enviando...`;
       const asistencia = Swal.getPopup().querySelector('input[name="Confirmacion"]:checked')?.value;
       const mensaje = Swal.getPopup().querySelector("#mensaje").value;
-      const pases = Swal.getPopup().querySelector('input[name=pases]').value;
+      const pases = Swal.getPopup().querySelector('input[name="Pases"]').value;
       
       if (!asistencia || !mensaje.trim()) {
         Swal.showValidationMessage("Por favor, completa todos los campos.");
