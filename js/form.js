@@ -144,13 +144,14 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
   formData.append("pases", pases);
   formData.append("Familia", familia);
 
-  fetch("https://script.google.com/macros/s/AKfycbxOcDUACiLKCOudEEGnuixi-BknpQgEC-6W1lEvwnaESDM9nZX-ZnQWLB1RxVmjFPCmzg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx7MkCrqVKW0EFODAICATJ_xVCwTXtgqmo2vtZ4Xk4AyoQ8uEQBT55Tzn1zVhd22iziiQ/exec", {
     method: "POST",
     body: formData
   })
     .then(response => {
       if (response.ok) {
         Swal.fire("¡Confirmado!", "Tu asistencia ha sido registrada.", "success");
+        console.log(response);
       } else {
         Swal.fire("Error", "Hubo un problema al enviar los datos.", "error");
       }
