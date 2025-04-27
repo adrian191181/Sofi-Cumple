@@ -50,7 +50,7 @@ const familias = {
   "C5D6": { familia: "Alpuche Yepez", pases: 3 },
   "E7F8": { familia: "Hernandez Garcia", pases: 4 },
   "G9H0": { familia: "Ramos Lopez", pases: 2 },
-  "I1J2": { familia: "Guaneros Ramos", pases: 2 },
+  "I1J2": { familia: "Guarneros Ramos", pases: 2 },
   "K3L4": { familia: "Naranjo Mendoza", pases: 2 },
   "M5N6": { familia: "Guatemala Hernandez", pases: 4 },
   "O7P8": { familia: "Ramos Lopez", pases: 2 },
@@ -115,7 +115,10 @@ const familias = {
   "W9BJ": { familia: "Marco", pases: 1 },
   "T7XP": { familia: "Bryron", pases: 1 },
   "P3XW": { familia: "Jimena", pases: 1 },
-  "K6ZD": { familia: "Luna", pases: 1 }
+  "K6ZD": { familia: "Luna", pases: 1 },
+  "ZKD": { familia: "Eduardo", pases: 1 },
+  "JJ0S": { familia: "Joss", pases: 1 },
+  "GS3T": { familia: "Gasthon", pases: 1 },
 };
 
 // Función para actualizar el HTML según el ID de familia
