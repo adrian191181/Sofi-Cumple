@@ -120,6 +120,7 @@ const familias = {
   "ZKD": { familia: "Eduardo", pases: 1 },
   "JJ0S": { familia: "Joss", pases: 1 },
   "GS3T": { familia: "Gasthon", pases: 1 },
+  "J4G3": { familia: "Villa Guarneros", pases: 3 },
 };
 
 // Función para actualizar el HTML según el ID de familia
