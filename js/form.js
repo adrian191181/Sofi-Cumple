@@ -141,7 +141,7 @@ const actualizarDatosFamilia = id => {
     document.getElementById("familia-title").textContent = datos.familia;
     document.getElementById("pases").textContent = `${datos.pases} pase`;
   } else if(datos.familia==="Tia Francis"){
-    document.getElementById("familia").textContent = "Esta Invitado";
+    document.getElementById("familia").textContent = "Esta Invitada";
     document.getElementById("invitation-text").textContent = "!Los esperamos!";
     document.getElementById("familia-title").textContent = datos.familia;
     document.getElementById("pases").textContent = `${datos.pases} pases`;
