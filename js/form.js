@@ -135,7 +135,7 @@ const actualizarDatosFamilia = id => {
     document.querySelector(".inv")?.remove();
     return;
   }
-  if (datos.pases === 1 || datos.familia ==="Tia Francis") {
+  if (datos.pases === 1) {
     document.getElementById("familia").textContent = "Esta Invitado";
     document.getElementById("invitation-text").textContent = "!Te esperamos!";
     document.getElementById("familia-title").textContent = datos.familia;
