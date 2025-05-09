@@ -140,7 +140,12 @@ const actualizarDatosFamilia = id => {
     document.getElementById("invitation-text").textContent = "!Te esperamos!";
     document.getElementById("familia-title").textContent = datos.familia;
     document.getElementById("pases").textContent = `${datos.pases} pase`;
-  } else {
+  } else if(datos.familia==="Tia Francis"){
+    document.getElementById("familia").textContent = "Esta Invitado";
+    document.getElementById("invitation-text").textContent = "!Los esperamos!";
+    document.getElementById("familia-title").textContent = datos.familia;
+    document.getElementById("pases").textContent = `${datos.pases} pases`;
+  }else{
     document.getElementById("familia-title").textContent = `Familia: ${datos.familia}`;
     document.getElementById("pases").textContent = `${datos.pases} pases`;
   }
