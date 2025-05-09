@@ -123,6 +123,9 @@ const familias = {
   "J4G3": { familia: "Villa Guarneros", pases: 3 },
   "QU3D": { familia: "Rodriguez Morales", pases: 2},
   "9GF1": { familia: "Fernández Ramos", pases: 3 },
+  "JF2O": { familia: "Tío Fallo", pases: 1 },
+  "FS20": { familia: "Tia Francis", pases: 2 },
+  "GE12": { familia: "Guarneros Ramos", pases: 2 }
 };
 
 // Función para actualizar el HTML según el ID de familia
