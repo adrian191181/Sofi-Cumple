@@ -4,7 +4,9 @@ console.log("Inicie");
 const eliminarElemento = () => {
   const btnConfirm = document.getElementById("comfirmbtn");
   btnConfirm?.remove();
+  document.getElementById("confirmInf").classList.replace("font", "font-2");
   document.getElementById("confirmInf").innerHTML = "Ya paso la fecha de confirmacion";
+  document.getElementById("confirmInf").classList.replace("confirmInf", "h2");
   document.getElementById("familia").innerText = "Espero que ya hayas confirmado";
   document.getElementById("familia-title")?.remove();
   document.getElementById("invitation-text").innerHTML = "Por que...";

@@ -272,7 +272,7 @@ h4{
   padding: 30px;
   background: var(--envelope-cover);
 }
-#confirmInf{
+.confirmInf{
   font-size: calc(1rem + 1.5vw)
 }
 .brd {
