@@ -4,12 +4,11 @@ console.log("Inicie");
 const eliminarElemento = () => {
   const btnConfirm = document.getElementById("comfirmbtn");
   btnConfirm?.remove();
-  document.getElementById("confirmInf").classList.replace("font", "font-2");
-  document.getElementById("confirmInf").innerHTML = "Ya paso la fecha de confirmacion";
-  document.getElementById("confirmInf").classList.replace("confirmInf", "h2");
-  document.getElementById("familia").innerText = "Espero que ya hayas confirmado";
+  document.getElementById("confirmInf")?.remove();
+  document.getElementById("familia")?.remove();
   document.getElementById("familia-title")?.remove();
-  document.getElementById("invitation-text").innerHTML = "Por que...";
+  document.getElementById("invitation-text").innerHTML = "A finalizado el tiempo de confirmar si deseas asistir contacta al anfitrión";
+  document.getElementById("invitation-text").classList.replace("font-2", "font");
   document.getElementById("divPases")?.remove();
   console.log("Elemento eliminado correctamente.");
 };
