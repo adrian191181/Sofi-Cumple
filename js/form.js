@@ -21,117 +21,140 @@ const getUrlParameter = name => {
 
 // Datos de las familias
 const familias = {
-  "A1B2": { familia: "Gamboa Cisneros", pases: 4 },
-  "C3D4": { familia: "Cisneros Chong", pases: 3 },
-  "E5F6": { familia: "Hernandez Cisneros", pases: 4 },
-  "G7H8": { familia: "Moreno Gamboa", pases: 4 },
-  "I9J0": { familia: "Osorio Gamboa", pases: 3 },
-  "K1L2": { familia: "Gamboa Hernandez", pases: 2 },
-  "M3N4": { familia: "Sosa Alvario", pases: 4 },
-  "O5P6": { familia: "Crisantos Gamboa", pases: 2 },
-  "Q7R8": { familia: "Morales Gamboa", pases: 2 },
-  "S9T0": { familia: "Rodriguez Crisantos", pases: 4 },
-  "U1V2": { familia: "Alvarez Alpuche", pases: 3 },
-  "W3X4": { familia: "Martinez Ramos", pases: 5 },
-  "Y5Z6": { familia: "Gamboa Pantoja", pases: 1 },
-  "A7B8": { familia: "Tejeda Ramos", pases: 2 },
-  "C9D0": { familia: "Tejeda Ramos", pases: 3 },
-  "E1F2": { familia: "Tejeda Ramos", pases: 1 },
-  "G3H4": { familia: "Tejeda Ramos", pases: 3 },
-  "I5J6": { familia: "Gamboa Yama", pases: 3 },
-  "K7L8": { familia: "Morales Gamboa", pases: 8 },
-  "M9N0": { familia: "Zarate Uscanga", pases: 2 },
-  "O1P2": { familia: "Garcia Barrientos", pases: 5 },
-  "Q3R4": { familia: "Crisantos Gamboa", pases: 2 },
-  "S5T6": { familia: "Alvizo Garcia", pases: 4 },
-  "U7V8": { familia: "Gamboa Cruz", pases: 3 },
-  "W9X0": { familia: "Garcia Icezaga", pases: 4 },
-  "Y1Z2": { familia: "Gamboa Bonola", pases: 4 },
-  "A3B4": { familia: "Perez", pases: 3 },
-  "C5D6": { familia: "Alpuche Yepez", pases: 3 },
-  "E7F8": { familia: "Hernandez Garcia", pases: 4 },
-  "G9H0": { familia: "Ramos Lopez", pases: 2 },
-  "I1J2": { familia: "Guarneros Ramos", pases: 2 },
-  "K3L4": { familia: "Naranjo Mendoza", pases: 2 },
-  "M5N6": { familia: "Guatemala Fernandez", pases: 4 },
-  "O7P8": { familia: "Ramos Lopez", pases: 2 },
-  "Q9R0": { familia: "Ramos", pases: 2 },
-  "S1T2": { familia: "Canabal Chong", pases: 2 },
-  "U3V4": { familia: "Chong Martinez", pases: 2 },
-  "W5X6": { familia: "Chong Martinez", pases: 2 },
-  "AVX2": { familia: "Chong Martinez", pases: 2 },
-  "Y7Z8": { familia: "Guarneros Sedas", pases: 3 },
-  "J7G8": { familia: "Maestro Desiderio", pases: 1 },
-  "S2IJ": { familia: "Maestra Doris", pases: 1 },
-  "Q3UJ": { familia: "Maestra Iliana", pases: 1 },
-  "1K3H": { familia: "Maestro Ezau", pases: 1 },
-  "GO05": { familia: "Maestra Violeta", pases: 1 },
-  "5FLA": { familia: "Maestra Nohemi", pases: 1 },
-  "0G3I": { familia: "Mestro Manuel", pases: 1 },
-  "X9T4": { familia: "Hector", pases: 1 },
-  "M7QA": { familia: "Camila", pases: 1 },
-  "Z4LN": { familia: "Emiliano", pases: 1 },
-  "J1RB": { familia: "Gabriela", pases: 1 },
-  "K3XD": { familia: "Iram", pases: 1 },
-  "T8YU": { familia: "Aitana", pases: 1 },
-  "F6EV": { familia: "Jesui", pases: 1 },
-  "N2MH": { familia: "Gissel", pases: 1 },
-  "Y3CU": { familia: "Kelly", pases: 1 },
-  "B5WP": { familia: "Sara", pases: 1 },
-  "L9KZ": { familia: "Gabriel", pases: 1 },
-  "R0XE": { familia: "Santiago", pases: 1 },
-  "V8PL": { familia: "Ricardo", pases: 1 },
-  "W6QS": { familia: "Felix", pases: 1 },
-  "A3JY": { familia: "Emily", pases: 1 },
-  "E7NK": { familia: "Isabella", pases: 1 },
-  "D2RM": { familia: "Belem", pases: 1 },
-  "U9BG": { familia: "Angel", pases: 1 },
-  "H5TD": { familia: "Giovanni", pases: 1 },
-  "S1XO": { familia: "Iker", pases: 1 },
-  "C0AQ": { familia: "Carlos", pases: 1 },
-  "Q8VW": { familia: "Raúl", pases: 1 },
-  "Z6NJ": { familia: "Ronnie", pases: 1 },
-  "X3YT": { familia: "Grettel", pases: 1 },
-  "N7LC": { familia: "Luna", pases: 1 },
-  "P4HS": { familia: "Michel", pases: 1 },
-  "Y5DE": { familia: "Alexa", pases: 1 },
-  "G2VK": { familia: "Dayana", pases: 1 },
-  "M6BO": { familia: "Martha", pases: 1 },
-  "K9AZ": { familia: "Jonathan", pases: 1 },
-  "V1QE": { familia: "Laura", pases: 1 },
-  "R7MN": { familia: "Luis", pases: 1 },
-  "L4WX": { familia: "Antonio", pases: 1 },
-  "F0TJ": { familia: "Camila", pases: 1 },
-  "E6RC": { familia: "Emily", pases: 1 },
-  "B3NU": { familia: "Emiliano", pases: 1 },
-  "T2KP": { familia: "Daniel", pases: 1 },
-  "A8HJ": { familia: "Manuel", pases: 1 },
-  "D9XM": { familia: "Profe Manuel", pases: 1 },
-  "H3LY": { familia: "Profe Doris", pases: 1 },
-  "J5BW": { familia: "Profe Desiderio", pases: 1 },
-  "S4EV": { familia: "Profe Violeta", pases: 1 },
-  "W7CJ": { familia: "Profe Iliana", pases: 1 },
-  "U1ZF": { familia: "Profe Ezau", pases: 1 },
-  "V5ND": { familia: "Adrian", pases: 1 },
-  "Q2LM": { familia: "Serena", pases: 1 },
-  "W9BJ": { familia: "Marco", pases: 1 },
-  "T7XP": { familia: "Bryron", pases: 1 },
-  "P3XW": { familia: "Jimena", pases: 1 },
-  "K6ZD": { familia: "Luna", pases: 1 },
-  "ZKD": { familia: "Eduardo", pases: 1 },
-  "JJ0S": { familia: "Joss", pases: 1 },
-  "GS3T": { familia: "Gasthon", pases: 1 },
-  "J4G3": { familia: "Villa Guarneros", pases: 3 },
-  "QU3D": { familia: "Rodriguez Morales", pases: 2},
-  "9GF1": { familia: "Fernández Ramos", pases: 3 },
-  "JF2O": { familia: "Tío Fallo", pases: 1 },
-  "FS20": { familia: "Tia Francis", pases: 2 },
-  "GE12": { familia: "Guarneros Ramos", pases: 2 }
-};
+  "A1B2": { familia: "Gamboa Cisneros", pases: 4, idFecha: "fecha1" },
+  "C3D4": { familia: "Cisneros Chong", pases: 3, idFecha: "fecha1" },
+  "E5F6": { familia: "Hernandez Cisneros", pases: 4, idFecha: "fecha1" },
+  "G7H8": { familia: "Moreno Gamboa", pases: 4, idFecha: "fecha1" },
+  "I9J0": { familia: "Osorio Gamboa", pases: 3, idFecha: "fecha1" },
+  "K1L2": { familia: "Gamboa Hernandez", pases: 2, idFecha: "fecha1" },
+  "M3N4": { familia: "Sosa Alvario", pases: 4, idFecha: "fecha1" },
+  "O5P6": { familia: "Crisantos Gamboa", pases: 2, idFecha: "fecha1" },
+  "Q7R8": { familia: "Morales Gamboa", pases: 2, idFecha: "fecha1" },
+  "S9T0": { familia: "Rodriguez Crisantos", pases: 4, idFecha: "fecha1" },
+  "U1V2": { familia: "Alvarez Alpuche", pases: 3, idFecha: "fecha1" },
+  "W3X4": { familia: "Martinez Ramos", pases: 5, idFecha: "fecha1" },
+  "Y5Z6": { familia: "Gamboa Pantoja", pases: 1, idFecha: "fecha1" },
+  "A7B8": { familia: "Tejeda Ramos", pases: 2, idFecha: "fecha1" },
+  "C9D0": { familia: "Tejeda Ramos", pases: 3, idFecha: "fecha1" },
+  "E1F2": { familia: "Tejeda Ramos", pases: 1, idFecha: "fecha1" },
+  "G3H4": { familia: "Tejeda Ramos", pases: 3, idFecha: "fecha1" },
+  "I5J6": { familia: "Gamboa Yama", pases: 3, idFecha: "fecha1" },
+  "K7L8": { familia: "Morales Gamboa", pases: 8, idFecha: "fecha1" },
+  "M9N0": { familia: "Zarate Uscanga", pases: 2, idFecha: "fecha1" },
+  "O1P2": { familia: "Garcia Barrientos", pases: 5, idFecha: "fecha1" },
+  "Q3R4": { familia: "Crisantos Gamboa", pases: 2, idFecha: "fecha1" },
+  "S5T6": { familia: "Alvizo Garcia", pases: 4, idFecha: "fecha1" },
+  "U7V8": { familia: "Gamboa Cruz", pases: 3, idFecha: "fecha1" },
+  "W9X0": { familia: "Garcia Icezaga", pases: 4, idFecha: "fecha1" },
+  "Y1Z2": { familia: "Gamboa Bonola", pases: 4, idFecha: "fecha1" },
+  "A3B4": { familia: "Perez", pases: 3, idFecha: "fecha1" },
+  "C5D6": { familia: "Alpuche Yepez", pases: 3, idFecha: "fecha1" },
+  "E7F8": { familia: "Hernandez Garcia", pases: 4, idFecha: "fecha1" },
+  "G9H0": { familia: "Ramos Lopez", pases: 2, idFecha: "fecha1" },
+  "I1J2": { familia: "Guarneros Ramos", pases: 2, idFecha: "fecha1" },
+  "K3L4": { familia: "Naranjo Mendoza", pases: 2, idFecha: "fecha1" },
+  "M5N6": { familia: "Guatemala Fernandez", pases: 4, idFecha: "fecha1" },
+  "O7P8": { familia: "Ramos Lopez", pases: 2, idFecha: "fecha1" },
+  "Q9R0": { familia: "Ramos", pases: 2, idFecha: "fecha1" },
+  "S1T2": { familia: "Canabal Chong", pases: 2, idFecha: "fecha1" },
+  "U3V4": { familia: "Chong Martinez", pases: 2, idFecha: "fecha1" },
+  "W5X6": { familia: "Chong Martinez", pases: 2, idFecha: "fecha1" },
+  "AVX2": { familia: "Chong Martinez", pases: 2, idFecha: "fecha1" },
+  "Y7Z8": { familia: "Guarneros Sedas", pases: 3, idFecha: "fecha1" },
+  "J7G8": { familia: "Maestro Desiderio", pases: 1, idFecha: "fecha1" },
+  "S2IJ": { familia: "Maestra Doris", pases: 1, idFecha: "fecha1" },
+  "Q3UJ": { familia: "Maestra Iliana", pases: 1, idFecha: "fecha1" },
+  "1K3H": { familia: "Maestro Ezau", pases: 1, idFecha: "fecha1" },
+  "GO05": { familia: "Maestra Violeta", pases: 1, idFecha: "fecha1" },
+  "5FLA": { familia: "Maestra Nohemi", pases: 1, idFecha: "fecha1" },
+  "0G3I": { familia: "Mestro Manuel", pases: 1, idFecha: "fecha1" },
+  "X9T4": { familia: "Hector", pases: 1, idFecha: "fecha1" },
+  "M7QA": { familia: "Camila", pases: 1, idFecha: "fecha1" },
+  "Z4LN": { familia: "Emiliano", pases: 1, idFecha: "fecha1" },
+  "J1RB": { familia: "Gabriela", pases: 1, idFecha: "fecha1" },
+  "K3XD": { familia: "Iram", pases: 1, idFecha: "fecha1" },
+  "T8YU": { familia: "Aitana", pases: 1, idFecha: "fecha1" },
+  "F6EV": { familia: "Jesui", pases: 1, idFecha: "fecha1" },
+  "N2MH": { familia: "Gissel", pases: 1, idFecha: "fecha1" },
+  "Y3CU": { familia: "Kelly", pases: 1, idFecha: "fecha1" },
+  "B5WP": { familia: "Sara", pases: 1, idFecha: "fecha1" },
+  "L9KZ": { familia: "Gabriel", pases: 1, idFecha: "fecha1" },
+  "R0XE": { familia: "Santiago", pases: 1, idFecha: "fecha1" },
+  "V8PL": { familia: "Ricardo", pases: 1, idFecha: "fecha1" },
+  "W6QS": { familia: "Felix", pases: 1, idFecha: "fecha1" },
+  "A3JY": { familia: "Emily", pases: 1, idFecha: "fecha1" },
+  "E7NK": { familia: "Isabella", pases: 1, idFecha: "fecha1" },
+  "D2RM": { familia: "Belem", pases: 1, idFecha: "fecha1" },
+  "U9BG": { familia: "Angel", pases: 1, idFecha: "fecha1" },
+  "H5TD": { familia: "Giovanni", pases: 1, idFecha: "fecha1" },
+  "S1XO": { familia: "Iker", pases: 1, idFecha: "fecha1" },
+  "C0AQ": { familia: "Carlos", pases: 1, idFecha: "fecha1" },
+  "Q8VW": { familia: "Raúl", pases: 1, idFecha: "fecha1" },
+  "Z6NJ": { familia: "Ronnie", pases: 1, idFecha: "fecha1" },
+  "X3YT": { familia: "Grettel", pases: 1, idFecha: "fecha1" },
+  "N7LC": { familia: "Luna", pases: 1, idFecha: "fecha1" },
+  "P4HS": { familia: "Michel", pases: 1, idFecha: "fecha1" },
+  "Y5DE": { familia: "Alexa", pases: 1, idFecha: "fecha1" },
+  "G2VK": { familia: "Dayana", pases: 1, idFecha: "fecha1" },
+  "M6BO": { familia: "Martha", pases: 1, idFecha: "fecha1" },
+  "K9AZ": { familia: "Jonathan", pases: 1, idFecha: "fecha1" },
+  "V1QE": { familia: "Laura", pases: 1, idFecha: "fecha1" },
+  "R7MN": { familia: "Luis", pases: 1, idFecha: "fecha1" },
+  "L4WX": { familia: "Antonio", pases: 1, idFecha: "fecha1" },
+  "F0TJ": { familia: "Camila", pases: 1, idFecha: "fecha1" },
+  "E6RC": { familia: "Emily", pases: 1, idFecha: "fecha1" },
+  "B3NU": { familia: "Emiliano", pases: 1, idFecha: "fecha1" },
+  "T2KP": { familia: "Daniel", pases: 1, idFecha: "fecha1" },
+  "A8HJ": { familia: "Manuel", pases: 1, idFecha: "fecha1" },
+  "D9XM": { familia: "Profe Manuel", pases: 1, idFecha: "fecha1" },
+  "H3LY": { familia: "Profe Doris", pases: 1, idFecha: "fecha1" },
+  "J5BW": { familia: "Profe Desiderio", pases: 1, idFecha: "fecha1" },
+  "S4EV": { familia: "Profe Violeta", pases: 1, idFecha: "fecha1" },
+  "W7CJ": { familia: "Profe Iliana", pases: 1, idFecha: "fecha1" },
+  "U1ZF": { familia: "Profe Ezau", pases: 1, idFecha: "fecha1" },
+  "V5ND": { familia: "Adrian", pases: 1, idFecha: "fecha1" },
+  "Q2LM": { familia: "Serena", pases: 1, idFecha: "fecha1" },
+  "W9BJ": { familia: "Marco", pases: 1, idFecha: "fecha1" },
+  "T7XP": { familia: "Bryron", pases: 1, idFecha: "fecha1" },
+  "P3XW": { familia: "Jimena", pases: 1, idFecha: "fecha1" },
+  "K6ZD": { familia: "Luna", pases: 1, idFecha: "fecha1" },
+  "ZKD": { familia: "Eduardo", pases: 1, idFecha: "fecha1" },
+  "JJ0S": { familia: "Joss", pases: 1, idFecha: "fecha1" },
+  "GS3T": { familia: "Gasthon", pases: 1, idFecha: "fecha1" },
+  "J4G3": { familia: "Villa Guarneros", pases: 3, idFecha: "fecha1" },
+  "QU3D": { familia: "Rodriguez Morales", pases: 2, idFecha: "fecha1" },
+  "9GF1": { familia: "Fernández Ramos", pases: 3, idFecha: "fecha1" },
+  "JF2O": { familia: "Tío Fallo", pases: 1, idFecha: "fecha1" },
+  "FS20": { familia: "Tia Francis", pases: 2, idFecha: "fecha1" },
+  "GE12": { familia: "Guarneros Ramos", pases: 2, idFecha: "fecha1" },
+  "K1H0": { familia: "Amador", pases: 3, idFecha: "fecha2" },
+  "2PA1": { familia: "Galicia", pases: 3, idFecha: "fecha2" },
+  
+  };
+const ahora = new Date();
+  // La fecha objetivo es el 21 de mayo a las 23:59:59 (recordar que el mes empieza en 0)
+  const fechas = {
+    fecha1: new Date(ahora.getFullYear(), 4, 21, 23, 59, 59),
+    fecha2: new Date(ahora.getFullYear(), 5, 15, 23, 59, 59)
+  };
+var globalid = "";
 
+
+function getDayMonth(fecha) {
+  const dia = fecha.getDate();
+  const meses = [
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+  ];
+  const mesNombre = meses[fecha.getMonth()];
+  return `${dia} de ${mesNombre}`;
+}
 // Función para actualizar el HTML según el ID de familia
 const actualizarDatosFamilia = id => {
   const datos = familias[id];
+  const datosFamilia = familias[id];
+  const fecha = fechas[datosFamilia.idFecha];
+  document.getElementById("confirmInf").textContent = "Confirmar asistencia antes del "+getDayMonth(fecha);
   if (!datos) {
     document.querySelector(".inv")?.remove();
     return;
@@ -291,13 +314,16 @@ const mostrarModalConfirmacion = (id) => {
 
 // Función principal para verificar la fecha y ejecutar la lógica correspondiente
 const verificarFecha = () => {
-  const ahora = new Date();
-  // La fecha objetivo es el 21 de mayo a las 23:59:59 (recordar que el mes empieza en 0)
-  const fechaObjetivo = new Date(ahora.getFullYear(), 4, 21, 23, 59, 59);
+  const id = getUrlParameter("id");
+  const datosFamilia = familias[id];
+  const fecha = fechas[datosFamilia.idFecha];
+  if (!fecha) {
+    return `No se encontró la fecha con el ID: ${datosFamilia.idFecha}`;
+  }
   console.log("Ahora:", ahora);
-  console.log("Fecha objetivo:", fechaObjetivo);
+  console.log("Fecha objetivo:", fecha);
 
-  if (ahora >= fechaObjetivo) {
+  if (ahora >= fecha) {
     eliminarElemento();
   } else {
     const id = getUrlParameter("id");
