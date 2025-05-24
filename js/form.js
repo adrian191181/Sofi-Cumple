@@ -129,6 +129,8 @@ const familias = {
   "GE12": { familia: "Guarneros Ramos", pases: 2, idFecha: "fecha1" },
   "K1H0": { familia: "Amador", pases: 3, idFecha: "fecha2" },
   "2PA1": { familia: "Galicia", pases: 3, idFecha: "fecha2" },
+  "QW1O": { familia: "Cruz Martínez", pases: 2, idFecha: "fecha2" },
+  "MA9Q": { familia: "Flores Melendez", pases: 3, idFecha: "fecha2" },
   
   };
 const ahora = new Date();
