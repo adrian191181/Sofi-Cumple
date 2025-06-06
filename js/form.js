@@ -70,7 +70,7 @@ const familias = {
   "0G3I": { familia: "Mestro Manuel", pases: 1, idFecha: "fecha1" },
   "X9T4": { familia: "Hector", pases: 1, idFecha: "fecha1" },
   "M7QA": { familia: "Camila", pases: 1, idFecha: "fecha1" },
-  "Z4LN": { familia: "Emiliano", pases: 1, idFecha: "fecha1" },
+  "Z4LN": { familia: "Emiliano", pases: 1, idFecha: "fecha2" },
   "J1RB": { familia: "Gabriela", pases: 1, idFecha: "fecha2" },
   "K3XD": { familia: "Iram", pases: 1, idFecha: "fecha1" },
   "T8YU": { familia: "Aitana", pases: 1, idFecha: "fecha1" },
