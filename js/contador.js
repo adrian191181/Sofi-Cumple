@@ -1,6 +1,6 @@
 function actualizarContador() {
     // Definir la fecha y hora objetivo directamente en el código
-    var fecha = "2025-06-21";
+    var fecha = "2025-11-21";
     var hora = "00:00:00";
     var fechaObjetivo = new Date(`${fecha}T${hora}`);
 
