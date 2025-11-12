@@ -19,6 +19,10 @@ const getUrlParameter = name => {
   return urlParams.get(name);
 };
 
+// Modo Demo - permite a usuarios externos probar sin código
+const MODO_DEMO = true;
+const DEMO_ID = "A1B2"; // ID por defecto para demo
+
 // Datos de las familias
 const familias = {
   "A1B2": { familia: "Gamboa Cisneros", pases: 4, idFecha: "fecha1" },
@@ -138,7 +142,7 @@ const familias = {
 const ahora = new Date();
   // La fecha objetivo es el 21 de mayo a las 23:59:59 (recordar que el mes empieza en 0)
   const fechas = {
-    fecha1: new Date(ahora.getFullYear(), 4, 21, 23, 59, 59),
+    fecha1: new Date(ahora.getFullYear(), 11, 21, 23, 59, 59),
     fecha2: new Date(ahora.getFullYear(), 5, 15, 23, 59, 59)
   };
 var globalid = "";
@@ -181,6 +185,24 @@ const actualizarDatosFamilia = id => {
 
 // Función para enviar los datos del formulario
 const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
+  // En modo demo, simular el envío sin hacer una solicitud real
+  if (MODO_DEMO) {
+    console.log("=== MODO DEMO - DATOS SIMULADOS ===");
+    console.log("Confirmación:", asistencia);
+    console.log("Mensaje:", mensaje);
+    console.log("Pases:", pases);
+    console.log("Familia:", familia);
+    console.log("Fecha:", new Date().toLocaleString("es-ES"));
+    
+    // Simular un pequeño delay como si se enviara
+    setTimeout(() => {
+      Swal.fire("¡Confirmado!", "Tu asistencia ha sido registrada.", "success");
+    }, 500);
+    return;
+  }
+
+  // Código original para producción (comentado)
+  /*
   const formData = new FormData();
   formData.append("Confirmacion", asistencia);
   formData.append("Mensaje", mensaje);
@@ -204,6 +226,7 @@ const enviarDatos = ({ asistencia, mensaje, pases, familia }) => {
       Swal.fire("Error", "Hubo un error en la comunicación.", "error");
       console.error("Error:", error);
     });
+  */
 };
 
 // Función para generar el HTML del modal de confirmación
@@ -318,19 +341,36 @@ const mostrarModalConfirmacion = (id) => {
 
 // Función principal para verificar la fecha y ejecutar la lógica correspondiente
 const verificarFecha = () => {
-  const id = getUrlParameter("id");
+  // En modo demo, usar DEMO_ID si no hay parámetro en la URL
+  let id = getUrlParameter("id");
+  if (!id && MODO_DEMO) {
+    id = DEMO_ID;
+    console.log(`Modo Demo activado: usando ID de prueba ${DEMO_ID}`);
+  }
+  
+  if (!id) {
+    Swal.fire("Error", "No se encontró el ID de familia. Accede con un código válido o en modo demo.", "error");
+    return;
+  }
+  
   const datosFamilia = familias[id];
+  if (!datosFamilia) {
+    Swal.fire("Error", "No se encontró la familia en el registro.", "error");
+    console.warn(`ID no encontrado: ${id}`);
+    return;
+  }
+  
   const fecha = fechas[datosFamilia.idFecha];
   if (!fecha) {
     return `No se encontró la fecha con el ID: ${datosFamilia.idFecha}`;
   }
+  
   console.log("Ahora:", ahora);
   console.log("Fecha objetivo:", fecha);
 
   if (ahora >= fecha) {
     eliminarElemento();
   } else {
-    const id = getUrlParameter("id");
     actualizarDatosFamilia(id);
     document.getElementById("comfirmbtn").addEventListener("click", () => mostrarModalConfirmacion(id));
   }
